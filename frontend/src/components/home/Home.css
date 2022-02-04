@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+body {
+    background:rgb(221, 247, 248);
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    border-color: white;
+}
+
+.Default-div {
+    margin-bottom: 20px;
+    background:white;
+}
+
+.Default-paragraph {
+    margin: 10px;
+    display: block;
+    text-indent: 10px;
+}
+
+.Default-body {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-family: Quicksand;
+    background:transparent;
+}
+
+.Home {
+    text-align: center;
+    display: flex;
+}
+
+.Outer-h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.Home-h1 {
+    color: black;
+    border-color: black;
+    width: 700px;
+    font-size: "300px";
+    font-weight: bolder;
+    border-style: double;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(35, 218, 96);
+}
+
+.Title-text {
+    color: white;
+}
+
+.Home-h2 {
+    text-align: center;
+}
+
+.About-link {
+    font-weight: bold;
+    color:rgb(55, 194, 55);
+    text-align: center;
+}
+
+.NavBar-div {
+    width:1400px;
+    border-style:solid;
+    border-top: hidden;
+    border-bottom: hidden;
+    margin: auto;
+    height: 100vh;
+    background:transparent;
+    border-color: transparent;
+}
