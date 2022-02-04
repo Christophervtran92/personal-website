@@ -17,7 +17,7 @@ export default function Works() {
                 <div className="Default-div" style={{marginTop: "10px"}}>
                     <h1 style={{textAlign: "center", fontFamily: 'quicksand', textDecoration: 'underline'}}>Some of my works</h1>
                     <Container cards>
-                        <Row style={{marginTop: "10px", marginBottom: "10px"}}>
+                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "center"}}>
                             <Card bg='dark' text='light' style={{ width: '18rem'}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={ez_apply_pic} alt={"ez_apply"} />
                                 <Card.Body>
@@ -39,6 +39,26 @@ export default function Works() {
                                         Design class which consisted of creating a translator, interpreter, and assembler for a new language. 
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"pascal_c"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Air Traffic Controller</Card.Title>
+                                    <Card.Text>
+                                        A project I worked on for my Data Structures and Algorithms class. It is a simulation of air traffic control systems through the use of heapsort and max priority queues. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/ATC" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"pascal_c"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
+                                    <Card.Text>
+                                        A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using hashing techniques and a binary search tree to perform inserts, deletes, and search features.
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/PA3" target="_blank">Source Code</Button>
                                 </Card.Body>
                             </Card>
                         </Row>
