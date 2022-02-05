@@ -3,6 +3,7 @@ import {Link, useResolvedPath} from 'react-router-dom';
 //import {useNavigate} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import '../home/Home.css'
+import './GamesList.css'
 import {Table, Tab, Tabs, TabContainer, TabContent, TabPane} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
@@ -11,11 +12,11 @@ const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed"
 
 export default function GamesList() {
     return (
-        <div className="GamesList">
+        <div className="games-list">
             <NavBar/>
             <div className="NavBar-div">
                 <header className="Default-body">
-                    <div style={{background: "white"}}>
+                    <div style={{background: "white", opacity: "90%"}}>
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                         <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                             <Tab eventKey="gamelist" title="Games List">

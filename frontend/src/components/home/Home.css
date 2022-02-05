@@ -8,9 +8,17 @@ body {
     border-color: white;
 }
 
+.Home-div {
+    background-image: url("../../images/undraw_welcoming.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 30%;
+}
+
 .Default-div {
     margin-bottom: 20px;
-    background:white;
+    background: transparent;
+    opacity: 95%;
 }
 
 .Default-paragraph {

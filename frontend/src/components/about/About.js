@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 //import {useNavigate} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import '../home/Home.css'
+import './About.css'
 
 export default function About() {
 //    const navigate = useNavigate();
 
     return (
-        <div className="About">
+        <div className="about-pic">
             <NavBar/>
             <div className="NavBar-div">
                 <header className="Default-body">
@@ -35,9 +36,7 @@ export default function About() {
                                 <h5>De Anza College</h5>
                                 Associate in Arts - Liberal Arts - Science, Math and Engineering Emphasis (September 2010 - March 2019)<br/><br/>
                             </center></p1> 
-                        </div>
-                        <div className="Default-div">
-                        <h1 style={{textDecoration: "underline", textAlign: "center"}}>About the Site</h1>
+                            <h1 style={{textDecoration: "underline", textAlign: "center"}}>About the Site</h1>
                             <p2 className="Default-paragraph">
                                 This website is a way for me to continue learning the MERN stack following my Software Engineering class. 
                                 The goal is for the website to become a sleek modern website that can be used to showcase my hobbies, 

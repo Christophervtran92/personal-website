@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import NavBar from '../navBar/NavBar'
 import {Container, Row, Col} from 'react-bootstrap'
 import '../home/Home.css'
+import './Works.css'
 import ez_apply_pic from '../../images/ez_apply_image.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png'
 
