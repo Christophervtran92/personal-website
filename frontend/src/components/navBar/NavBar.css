@@ -7,13 +7,12 @@
 */
 
 .color-nav {
-    background-color: transparent;
+    background-color: rgb(221, 247, 248);
 }
 
 .navbar-brand {
     font-family: Licorice;
-    font-size: 65px;
-    text-decoration: underline;
+    font-size: 50px;
     text-decoration-thickness: 3px;
     font-weight:bold;
     margin-left: 5px;

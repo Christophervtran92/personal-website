@@ -10,7 +10,7 @@ export default function NavBar () {
         variant='light'
         expand='lg'
         sticky="top"
-        style={{height: "75px"}}
+        style={{height: "65px"}}
         >
         <NavLink 
           exact to='/' 
