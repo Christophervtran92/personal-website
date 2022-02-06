@@ -17,7 +17,7 @@ export default function About() {
                         <div className="Default-div">
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> About Me</h1>
                             <p1 className="Default-paragraph">
-                                My name is Christopher Tran and I am a computer science graduate from San Jose State University. I have lived and studied in the bay area my entire life. Ever since 
+                                My name is Christopher Tran and I am a computer science graduate from San José State University. I have lived and studied in the bay area my entire life. Ever since 
                                 I was a kid I have been interested in electronics whether it be computers or video games, cell phones or televisions, just learning about new technologies 
                                 always piqued my interest. During my junior year of high school I took a java programming class and that was my first experience with computer programming. That was
                                 the class that got me on the path to become a computer scientist. Although my journey was not smooth, there were even times where I felt I was not going to be
@@ -31,7 +31,7 @@ export default function About() {
                             </p1>
                             <h1 style={{textDecoration: "underline", textAlign: "center"}}> Education</h1>
                             <p1><center>
-                                <h5>San Jose State University</h5>
+                                <h5>San José State University</h5>
                                 Bachelor of Science - Computer Science (August 2019 - December 2021) <br/><br/>
                                 <h5>De Anza College</h5>
                                 Associate in Arts - Liberal Arts - Science, Math and Engineering Emphasis (September 2010 - March 2019)<br/><br/>

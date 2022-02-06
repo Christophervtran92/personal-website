@@ -6,6 +6,9 @@ import {Container, Row, Col} from 'react-bootstrap'
 import '../home/Home.css'
 import './Works.css'
 import ez_apply_pic from '../../images/ez_apply_image.png'
+import pascal_c_pic from '../../images/pascal_C_thumbnail.png'
+import atc_pic from '../../images/atc_thumbnail.png'
+import mini_fb_pic from '../../images/mini-fb_thumbnail.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png'
 
 export default function Works() {
@@ -32,7 +35,7 @@ export default function Works() {
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"pascal_c"} />
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={pascal_c_pic} alt={"pascal_c"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Pascal-C</Card.Title>
                                     <Card.Text>
@@ -43,7 +46,7 @@ export default function Works() {
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"pascal_c"} />
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={atc_pic} alt={"atc"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Air Traffic Controller</Card.Title>
                                     <Card.Text>
@@ -53,7 +56,7 @@ export default function Works() {
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"pascal_c"} />
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={mini_fb_pic} alt={"minifb"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
                                     <Card.Text>

@@ -17,7 +17,7 @@ body {
 
 .Default-div {
     margin-bottom: 20px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.80);
     opacity: 95%;
 }
 
