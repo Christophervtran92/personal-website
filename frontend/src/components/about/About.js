@@ -31,11 +31,26 @@ export default function About() {
                             </p1>
                             <h1 style={{textDecoration: "underline", textAlign: "center"}}> Education</h1>
                             <p1><center>
-                                <h5>San José State University</h5>
+                                <h5 style={{fontWeight: "bold"}}>San José State University</h5>
                                 Bachelor of Science - Computer Science (August 2019 - December 2021) <br/><br/>
-                                <h5>De Anza College</h5>
+                                <h5 style={{fontWeight: "bold"}}>De Anza College</h5>
                                 Associate in Arts - Liberal Arts - Science, Math and Engineering Emphasis (September 2010 - March 2019)<br/><br/>
                             </center></p1> 
+                            <h1 style={{textDecoration: "underline", textAlign: "center"}}> Work History</h1>
+                            <div>
+                                <h5 style={{fontWeight: "bold", textAlign: "center"}}>Central Computers (Sept 2013 - May 2016)</h5>
+                                <h6 style={{textDecoration: "underline", textAlign: "center"}}>Computer Technician (Jan 2014 - May 2016)</h6>
+                                <p1 className="Default-paragraph" style={{display: "block", marginLeft: "15%", marginRight: "15%"}}>
+                                    As a technician I helped to troubleshoot and repair customer computers whether it be software or hardware related.
+                                    I also built and upgraded workstations, personal computers, and servers for both regular and corporate customers.
+                                    I provided technical support in person or over the phone.
+                                </p1>
+                                <h6 style={{textDecoration: "underline", textAlign: "center"}}>Sales Associate (Sept 2013 - Jan 2014)</h6>
+                                <p1 className="Default-paragraph" style={{display: "block", marginLeft: "15%", marginRight: "15%"}}>
+                                    As a sales associate I helped customers to find and choose products based on their needs from basic tech needs to full system builds.
+                                    Along with that I also did typical sales tasks such as organizing and stocking products.
+                                </p1>
+                            </div> 
                             <h1 style={{textDecoration: "underline", textAlign: "center"}}>About the Site</h1>
                             <p2 className="Default-paragraph">
                                 This website is a way for me to continue learning the MERN stack following my Software Engineering class. 
