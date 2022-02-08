@@ -55,7 +55,7 @@ export default function About() {
                             <p2 className="Default-paragraph">
                                 This website is a way for me to continue learning the MERN stack following my Software Engineering class. 
                                 The goal is for the website to become a sleek modern website that can be used to showcase my hobbies, 
-                                work, and other endeavors.
+                                work, and other endeavors. Frontend is deployed through Vercel.
                             </p2>
                         </div>
                     </p>
