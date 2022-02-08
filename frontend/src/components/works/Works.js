@@ -39,10 +39,10 @@ export default function Works() {
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Pascal-C</Card.Title>
                                     <Card.Text>
-                                        Language with a Pascal backbone but built to resemble C style languages. This was a project made in my Compiler
-                                        Design class which consisted of creating a translator, interpreter, and assembler for a new language. 
+                                        Language with a Pascal backbone but built to resemble C style languages. This compiler can run code written in the Pascal-C language as well as
+                                        generate machine code in Jasmine from code written in Pascal-C.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/FALL_2020/tree/master/CS153/Pascal-C" target="_blank">Source Code</Button>
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
