@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-body {
+html, body {
     background:rgb(221, 247, 248);
     font-family: 'Times New Roman', Times, serif;
     color: black;
@@ -19,6 +19,9 @@ body {
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.80);
     opacity: 100%;
+    padding: 12px;
+    border-Radius: 5px;
+    font-Family: 'quicksand';
 }
 
 .Default-paragraph {

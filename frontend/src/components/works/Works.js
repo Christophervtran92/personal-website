@@ -18,7 +18,7 @@ export default function Works() {
         <div className="Works">
             <NavBar/>
             <div className="NavBar-div">
-                <div className="Default-div" style={{marginTop: "10px"}}>
+                <div style={{background: "rgba(255, 255, 255, 0.80)", padding: "12px", borderRadius: "5px", fontFamily: "quicksand"}}>
                     <h1 style={{textAlign: "center", fontFamily: 'quicksand', textDecoration: 'underline'}}>Some of my works</h1>
                     <div style={{height: "80vh", overflowY: "scroll", marginLeft: "100px"}}>
                     <Container cards>
@@ -32,7 +32,7 @@ export default function Works() {
                                         to quickly apply to jobs with a simple click and for recruiters to easily find talent.
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/jamessnguyenn/EZ-Apply" target="_blank">Source Code</Button>
-                                    <Button variant="secondary" style={{marginLeft: "5px"}} href="https://ez-apply.vercel.app" target="_blank">Check It Out</Button>
+                                    <Button variant="secondary" style={{marginLeft: "4px", fontSize: "13.7px"}} href="https://ez-apply.vercel.app" target="_blank">Check It Out</Button>
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>

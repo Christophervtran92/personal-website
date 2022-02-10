@@ -16,10 +16,10 @@ export default function NavBar () {
           exact to='/' 
           className='navbar-brand' 
           activeClassName='activeNav'>
-          {/*<i class="fas fa-home"></i>*/} Christopher T.
+            Christopher T.
           </NavLink>
           <Navbar.Toggle aria-controls='navLinks' />
-          <Navbar.Collapse id='navLinks' style={{marginLeft: "25px"}}>
+          <Navbar.Collapse id='navLinks' style={{marginLeft: "25px", fontFamily: "quicksand"}}>
             <Nav className='ml-auto'>
               <NavLink
                 exact
@@ -75,13 +75,6 @@ export default function NavBar () {
               </NavLink>
             </Nav>
           </Navbar.Collapse>
-          {/*</Container>*/}
       </Navbar>
     )
   }
-
-  /*
-            <NavLink exact to='/' className='navbar-brand' activeClassName='activeNav' style={{marginLeft: "10px", fontWeight: "bolder"}}>
-          <i class="fas fa-home"></i> Homepage
-          </NavLink>
-  */

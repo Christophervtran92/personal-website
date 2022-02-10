@@ -1,14 +1,16 @@
+
 import React, {useEffect, useState} from 'react';
 //import {Link, useResolvedPath} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Table, Tab, Tabs, TabContainer, TabContent, TabPane} from 'react-bootstrap';
+import {Table, Tab, Tabs, TabContainer, TabContent, TabPane, Container} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
 const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
 const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed", "2021"];
+
 
 export default function GamesList() {
 
@@ -90,33 +92,29 @@ export default function GamesList() {
         <div className="games-list">
             <NavBar/>
             <div className="NavBar-div">
-                <header className="Default-body">
-                    <div style={{background: "white", opacity: "90%", padding: "12px", borderRadius: "5px"}}>
-                        <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
-                        <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
-                            <Tab eventKey="gamelist" title="Games Progress">
-                                <div style={{height: "80vh", overflowY: "scroll"}}>
-                                    <Table responsive>
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                {Array.from(headings).map((headingName, index) => (
-                                                <th key={index}>{headingName}</th>
-                                                ))}
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {gamesListTable()}
-                                        </tbody>
-                                    </Table>
-                                </div>
-                            </Tab>
-                            <Tab eventKey="gamecollection" title="Games Collection">
-                                Under construction!
-                            </Tab>
-                        </Tabs>
-                    </div>
-                </header>
+                <div style={{background: "white", opacity: "90%", padding: "12px", borderRadius: "5px", fontFamily: "quicksand"}}>
+                    <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
+                    <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
+                        <Tab eventKey="gamelist" title="Games Progress">
+                            <div style={{height: "75vh", overflowY: "scroll"}}>
+                                <Table responsive bordered hover>
+                                    <thead>
+                                        <th>#</th>
+                                        {Array.from(headings).map((headingName, index) => (
+                                        <th key={index}>{headingName}</th>
+                                        ))}
+                                    </thead>
+                                    <tbody>
+                                        {gamesListTable()}
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </Tab>
+                        <Tab eventKey="gamecollection" title="Games Collection">
+                            Under construction!
+                        </Tab>
+                    </Tabs>
+                </div>
             </div>
         </div>
     );
@@ -133,4 +131,5 @@ export default function GamesList() {
         <td>{res.yr_completed}</td>
     </tr>
     )}
+
 */
