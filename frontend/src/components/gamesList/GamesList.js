@@ -44,7 +44,7 @@ export default function GamesList() {
             <NavBar/>
             <div className="NavBar-div">
                 <header className="Default-body">
-                    <div style={{background: "white", opacity: "90%"}}>
+                    <div style={{background: "white", opacity: "90%", padding: "12px", borderRadius: "5px"}}>
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                         <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                             <Tab eventKey="gamelist" title="Games Progress">
