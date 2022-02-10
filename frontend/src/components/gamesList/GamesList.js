@@ -26,16 +26,63 @@ export default function GamesList() {
 
     const gamesListTable = () => {
         return response.map((res, index) => {
-            return (
-                <tr>
-                    <td>{index+1}</td>
-                    <td>{res.title}</td>
-                    <td>{res.system}</td>
-                    <td>{res.release_date}</td>
-                    <td>{res.status}</td>
-                    <td>{res.yr_completed}</td>
-                </tr>
-            )
+            switch(res.status) {
+                case "Upcoming":
+                    return (
+                        <tr style={{backgroundColor: "#5AB4E0"}}>
+                            <td>{index+1}</td>
+                            <td>{res.title}</td>
+                            <td>{res.system}</td>
+                            <td>{res.release_date}</td>
+                            <td>{res.status}</td>
+                            <td>{res.yr_completed}</td>
+                        </tr>
+                    )
+                case "Planned":
+                    return (
+                        <tr style={{backgroundColor: "#BDBDBD"}}>
+                            <td>{index+1}</td>
+                            <td>{res.title}</td>
+                            <td>{res.system}</td>
+                            <td>{res.release_date}</td>
+                            <td>{res.status}</td>
+                            <td>{res.yr_completed}</td>
+                        </tr>
+                    )
+                case "Limbo":
+                    return (
+                        <tr style={{backgroundColor: "#FFC34D"}}>
+                            <td>{index+1}</td>
+                            <td>{res.title}</td>
+                            <td>{res.system}</td>
+                            <td>{res.release_date}</td>
+                            <td>{res.status}</td>
+                            <td>{res.yr_completed}</td>
+                        </tr>
+                    )
+                case "In Progress":
+                    return (
+                        <tr style={{backgroundColor: "#FAFF69"}}>
+                            <td>{index+1}</td>
+                            <td>{res.title}</td>
+                            <td>{res.system}</td>
+                            <td>{res.release_date}</td>
+                            <td>{res.status}</td>
+                            <td>{res.yr_completed}</td>
+                        </tr>
+                    )
+                case "Completed":
+                    return (
+                        <tr style={{backgroundColor: "#8EDB76"}}>
+                            <td>{index+1}</td>
+                            <td>{res.title}</td>
+                            <td>{res.system}</td>
+                            <td>{res.release_date}</td>
+                            <td>{res.status}</td>
+                            <td>{res.yr_completed}</td>
+                        </tr>
+                    )
+            }
         })
     }
 
@@ -48,7 +95,7 @@ export default function GamesList() {
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                         <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                             <Tab eventKey="gamelist" title="Games Progress">
-                                <div style={{height: "80vh", overflow: "scroll"}}>
+                                <div style={{height: "80vh", overflowY: "scroll"}}>
                                     <Table responsive>
                                         <thead>
                                             <tr>

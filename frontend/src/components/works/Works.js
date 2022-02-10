@@ -20,7 +20,7 @@ export default function Works() {
             <div className="NavBar-div">
                 <div className="Default-div" style={{marginTop: "10px"}}>
                     <h1 style={{textAlign: "center", fontFamily: 'quicksand', textDecoration: 'underline'}}>Some of my works</h1>
-                    <div style={{height: "80vh", overflow: "scroll", marginLeft: "100px"}}>
+                    <div style={{height: "80vh", overflowY: "scroll", marginLeft: "100px"}}>
                     <Container cards>
                         <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
                             <Card bg='dark' text='light' style={{ width: '18rem'}}>
