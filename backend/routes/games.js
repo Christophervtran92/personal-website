@@ -13,7 +13,7 @@ router.route('/').post((req, res) => {
 })
 
 router.route('/').get((req, res) => {
-    Game.find({}).sort({system: 1, title: 1})
+    Game.find({}).sort({yr_completed: 1, status: 1, system: 1, title: 1})
     .then(games => {
         res.json(games)
     })

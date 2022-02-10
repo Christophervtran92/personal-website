@@ -1,4 +1,5 @@
-const dateRegex = /^[0-1][0-9]\/[0-3][0-9]\/[1-2][0-9][0-9][0-9]$/; //Regex for format mm/dd/yyyy
+//const dateRegex = /^[0-1][0-9]\/[0-3][0-9]\/[1-2][0-9][0-9][0-9]$/; //Regex for format mm/dd/yyyy
+const releaseDateRegex = /(^[0-1][0-9]\/[0-3][0-9]\/[1-2][0-9][0-9][0-9]$)|(^TBA$)/;
 const mongoose = require('mongoose');
 
 const gameSchema = new mongoose.Schema({
@@ -14,7 +15,7 @@ const gameSchema = new mongoose.Schema({
     release_date: {
         type: String,
         required: true,
-        validate: dateRegex
+        validate: releaseDateRegex
     },
     status: {
         type: String,
