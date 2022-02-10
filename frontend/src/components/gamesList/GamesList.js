@@ -47,7 +47,7 @@ export default function GamesList() {
                     <div style={{background: "white", opacity: "90%"}}>
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                         <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
-                            <Tab eventKey="gamelist" title="Games List">
+                            <Tab eventKey="gamelist" title="Games Progress">
                                 <div style={{height: "80vh", overflow: "scroll"}}>
                                     <Table responsive>
                                         <thead>
