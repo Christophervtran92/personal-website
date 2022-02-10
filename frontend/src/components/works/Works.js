@@ -20,8 +20,9 @@ export default function Works() {
             <div className="NavBar-div">
                 <div className="Default-div" style={{marginTop: "10px"}}>
                     <h1 style={{textAlign: "center", fontFamily: 'quicksand', textDecoration: 'underline'}}>Some of my works</h1>
+                    <div style={{height: "80vh", overflow: "scroll", marginLeft: "100px"}}>
                     <Container cards>
-                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "center"}}>
+                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
                             <Card bg='dark' text='light' style={{ width: '18rem'}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={ez_apply_pic} alt={"ez_apply"} />
                                 <Card.Body>
@@ -39,8 +40,8 @@ export default function Works() {
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Pascal-C</Card.Title>
                                     <Card.Text>
-                                        Language with a Pascal backbone but built to resemble C style languages. This compiler can run code written in the Pascal-C language as well as
-                                        generate machine code in Jasmine from code written in Pascal-C.
+                                        Language with a Pascal backbone but built to resemble C style languages. This compiler can run code written in the 
+                                        Pascal-C language as well as generate machine code in Jasmine from code written in Pascal-C.
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/FALL_2020/tree/master/CS153/Pascal-C" target="_blank">Source Code</Button>
                                 </Card.Body>
@@ -50,7 +51,8 @@ export default function Works() {
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Air Traffic Controller</Card.Title>
                                     <Card.Text>
-                                        A project I worked on for my Data Structures and Algorithms class. It is a simulation of air traffic control systems through the use of heapsort and max priority queues. 
+                                        A project I worked on for my Data Structures and Algorithms class. It is a simulation of air traffic control 
+                                        systems through the use of heapsort and max priority queues. 
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/ATC" target="_blank">Source Code</Button>
                                 </Card.Body>
@@ -60,13 +62,112 @@ export default function Works() {
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
                                     <Card.Text>
-                                        A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using hashing techniques and a binary search tree to perform inserts, deletes, and search features.
+                                        A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
+                                        hashing techniques and a binary search tree to perform inserts, deletes, and search features.
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/PA3" target="_blank">Source Code</Button>
                                 </Card.Body>
                             </Card>
                         </Row>
+
+
+
+                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
+                            <Card bg='dark' text='light' style={{ width: '18rem'}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                        </Row>
+                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
+                            <Card bg='dark' text='light' style={{ width: '18rem'}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Text>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                        </Row>
+
+
                     </Container>
+                    </div>
                 </div>
             </div>
         </div>
