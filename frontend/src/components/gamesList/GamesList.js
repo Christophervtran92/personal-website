@@ -5,7 +5,7 @@ import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Table, Tab, Tabs, TabContainer, TabContent, TabPane, Container, Button} from 'react-bootstrap';
+import {Table, Tab, Tabs,DropdownButton, Dropdown, InputGroup, FormControl} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
 const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
@@ -15,16 +15,35 @@ const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed"
 export default function GamesList() {
 
     const [response, setResponse] = useState([]);
+    const [userInput, setUserInput] = useState([]);
+    const [filter, setFilter] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:4000/games")
-        .then(res => {
-            setResponse(res.data)
-        })
-        .catch(err => {
-            err.status(400).json(err)
-        })
+        if(filter && userInput) {
+            axios.get("http://localhost:4000/games?"+filter+"="+userInput)
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
+        else
+        {
+            axios.get("http://localhost:4000/games")
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
     }, [])
+
+    const handleSelect=(e)=>{
+        console.log(e);
+        setFilter(e);
+    }
 
     const gamesListTable = () => {
         return response.map((res, index) => {
@@ -96,13 +115,29 @@ export default function GamesList() {
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                     <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                         <Tab eventKey="gamelist" title="Games Progress">
-                            <div className="filter-div" style={{padding: "2px"}}>
-                                Sort By (Under Construction):
-                                <Button variant="outline-primary" style={{marginLeft: "5px"}}>Title</Button>
-                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>System</Button>
-                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Release Date</Button>
-                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Status</Button>
-                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Year Completed</Button>
+                            <div className="filter-div" style={{padding: "5px"}}>
+                                Filter (Under Construction):
+                                <InputGroup className="game-list-filter">
+                                    <FormControl 
+                                        aria-label="Game list filter" 
+                                        type="text" 
+                                        value={userInput}
+                                        onChange={(e)=> setUserInput(e.target.value)}
+                                    />
+                                    <DropdownButton
+                                    variant="outline-secondary"
+                                    title="Filter by"
+                                    id="games-filter"
+                                    align="end"
+                                    onSelect={handleSelect}
+                                    >
+                                        <Dropdown.Item eventKey="title">Title</Dropdown.Item>
+                                        <Dropdown.Item eventKey="system">System</Dropdown.Item>
+                                        <Dropdown.Item eventKey="release_date">Release Date</Dropdown.Item>
+                                        <Dropdown.Item eventKey="status">Status</Dropdown.Item>
+                                        <Dropdown.Item eventKey="yr_completed">Year Completed</Dropdown.Item>
+                                    </DropdownButton>
+                                </InputGroup>
                             </div>
                             <div style={{height: "75vh", overflowY: "scroll"}}>
                                 <Table responsive bordered hover>
@@ -140,4 +175,26 @@ export default function GamesList() {
     </tr>
     )}
 
+*/
+
+/*
+    <DropdownButton id="dropdown-basic-button" title="Filter By">
+        <Dropdown.Item href="#/action-1">Title</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">System</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Release Date</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">Status</Dropdown.Item>
+        <Dropdown.Item href="#/action-5">Year Completed</Dropdown.Item>
+    </DropdownButton>
+*/
+
+/*
+    useEffect(() => {
+        axios.get("http://localhost:4000/games")
+        .then(res => {
+            setResponse(res.data)
+        })
+        .catch(err => {
+            err.status(400).json(err)
+        })
+    }, [])
 */
