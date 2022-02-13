@@ -5,7 +5,7 @@ import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Table, Tab, Tabs, TabContainer, TabContent, TabPane, Container} from 'react-bootstrap';
+import {Table, Tab, Tabs, TabContainer, TabContent, TabPane, Container, Button} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
 const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
@@ -96,6 +96,14 @@ export default function GamesList() {
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                     <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                         <Tab eventKey="gamelist" title="Games Progress">
+                            <div className="filter-div" style={{padding: "2px"}}>
+                                Sort By (Under Construction):
+                                <Button variant="outline-primary" style={{marginLeft: "5px"}}>Title</Button>
+                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>System</Button>
+                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Release Date</Button>
+                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Status</Button>
+                                <Button variant="outline-primary" style={{marginLeft: "3px"}}>Year Completed</Button>
+                            </div>
                             <div style={{height: "75vh", overflowY: "scroll"}}>
                                 <Table responsive bordered hover>
                                     <thead>
