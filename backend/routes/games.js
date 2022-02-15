@@ -1,3 +1,4 @@
+const { query } = require('express');
 const Game = require('../models/game.model');
 const router = require('express').Router();
 
@@ -33,29 +34,70 @@ router.route('/').get((req, res) => {
 
     if(title) {
         query.title = title;
-    }
-    if(system) {
+        let found = Game.find({title: title});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
+    } else if(system) {
         query.system = system;
+        let found = Game.find({system: system});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
     }
-    if(release_date) {
+    else if(release_date) {
         query.release_date = release_date;
+        let found = Game.find({release_date: release_date});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
     }
-    if(status) {
+    else if(status) {
         query.status = status;
+        let found = Game.find({status: status});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
     }
-    if(yr_completed) {
+    else if(yr_completed) {
         query.yr_completed = yr_completed;
+        let found = Game.find({yr_completed: yr_completed});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
     }
+    else {
 
-    let found = Game.find(query);
-    found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
+        let found = Game.find({query});
+        found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
 
-    found.then(result => {
-        return res.status(200).json(result)
-    })
-    .catch(err=> {
-        return res.status(400).json(err)
-    })
+        found.then(result => {
+            return res.status(200).json(result)
+        })
+        .catch(err=> {
+            return res.status(400).json(err)
+        })
+    }
 })
 
 

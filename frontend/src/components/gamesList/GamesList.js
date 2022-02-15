@@ -5,12 +5,11 @@ import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Table, Tab, Tabs,DropdownButton, Dropdown, InputGroup, FormControl} from 'react-bootstrap';
+import {Button, Table, Tab, Tabs,DropdownButton, Dropdown, InputGroup, Form, FormControl, Col} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
-const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
-const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed", "2021"];
-
+// const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
+// const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed", "2021"];
 
 export default function GamesList() {
 
@@ -38,11 +37,35 @@ export default function GamesList() {
                 err.status(400).json(err)
             })
         }
-    }, [])
+    },[])
 
     const handleSelect=(e)=>{
-        console.log(e);
         setFilter(e);
+        console.log(e);
+    }
+
+    const handleSubmit=(e)=>{
+        console.log(e);
+        if(filter && userInput) {
+            axios.get("http://localhost:4000/games?"+filter+"="+userInput)
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
+        else
+        {
+            axios.get("http://localhost:4000/games")
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
+
     }
 
     const gamesListTable = () => {
@@ -103,6 +126,8 @@ export default function GamesList() {
                             <td>{res.yr_completed}</td>
                         </tr>
                     )
+                default:
+                    return null;
             }
         })
     }
@@ -118,25 +143,30 @@ export default function GamesList() {
                             <div className="filter-div" style={{padding: "5px"}}>
                                 Filter (Under Construction):
                                 <InputGroup className="game-list-filter">
-                                    <FormControl 
-                                        aria-label="Game list filter" 
-                                        type="text" 
-                                        value={userInput}
-                                        onChange={(e)=> setUserInput(e.target.value)}
-                                    />
-                                    <DropdownButton
-                                    variant="outline-secondary"
-                                    title="Filter by"
-                                    id="games-filter"
-                                    align="end"
-                                    onSelect={handleSelect}
-                                    >
-                                        <Dropdown.Item eventKey="title">Title</Dropdown.Item>
-                                        <Dropdown.Item eventKey="system">System</Dropdown.Item>
-                                        <Dropdown.Item eventKey="release_date">Release Date</Dropdown.Item>
-                                        <Dropdown.Item eventKey="status">Status</Dropdown.Item>
-                                        <Dropdown.Item eventKey="yr_completed">Year Completed</Dropdown.Item>
-                                    </DropdownButton>
+                                    <Col xs={8}>
+                                        <FormControl 
+                                         aria-label="Game list filter" 
+                                         type="text" 
+                                         value={userInput}
+                                         onChange={(e)=> setUserInput(e.target.value)}
+                                        />
+                                    </Col>
+                                    <Col xs={2} md={2}>
+                                    <Form.Select aria-label="Filters" style={{width: "95%"}}
+                                     onChange={(e) => handleSelect(e.target.value)}>
+                                        <option>Filters</option>
+                                        <option value="title">Title</option>
+                                        <option value="system">System</option>
+                                        <option value="release_date">Release Date</option>
+                                        <option value="status">Status</option>
+                                        <option value="yr_completed">Year Completed</option>
+                                    </Form.Select>
+                                    </Col>
+                                    <Col xs={2} md={2}>
+                                    <Button variant="primary" style={{width: "50%"}}
+                                     onClick={handleSubmit}>Submit</Button>
+                                    </Col>
+
                                 </InputGroup>
                             </div>
                             <div style={{height: "75vh", overflowY: "scroll"}}>
@@ -164,6 +194,10 @@ export default function GamesList() {
 }
 
 /*
+-----------------
+Component History
+-----------------
+
 {response.map((res, index) => 
     <tr>
         <td>{index+1}</td>
@@ -197,4 +231,46 @@ export default function GamesList() {
             err.status(400).json(err)
         })
     }, [])
+*/
+
+/*
+const handleSelect=(e)=>{
+        console.log(e);
+        setFilter(e);
+        if(filter && userInput) {
+            axios.get("http://localhost:4000/games?"+filter+"="+userInput)
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
+        else
+        {
+            axios.get("http://localhost:4000/games")
+            .then(res => {
+                setResponse(res.data)
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
+*/
+
+/*
+    <Col xs={1} md={1}>
+        <DropdownButton
+        variant="outline-secondary"
+        title="Filter by"
+        id="games-filter"
+        align="end"
+        >
+            <Dropdown.Item eventKey="title">Title</Dropdown.Item>
+            <Dropdown.Item eventKey="system">System</Dropdown.Item>
+            <Dropdown.Item eventKey="release_date">Release Date</Dropdown.Item>
+            <Dropdown.Item eventKey="status">Status</Dropdown.Item>
+            <Dropdown.Item eventKey="yr_completed">Year Completed</Dropdown.Item>
+        </DropdownButton>
+    </Col>
 */
