@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './NavBar.css';
 
 export default function NavBar () {
@@ -73,6 +73,17 @@ export default function NavBar () {
                 >
                 Games List
               </NavLink>
+              <NavDropdown 
+               title="Links" 
+               id="navbarScrollingDropdown"
+               style={{marginLeft: "50px"}}>
+                <NavDropdown.Item href="https://github.com/Christophervtran92" 
+                 target="_blank"
+                 >
+                  Github
+                </NavDropdown.Item>
+                <NavDropdown.Item href="https://linkedin.com/in/tran-christopher" target="_blank">LinkedIn</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
       </Navbar>

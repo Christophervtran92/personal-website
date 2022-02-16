@@ -1,11 +1,10 @@
 
 import React, {useEffect, useState} from 'react';
-//import {Link, useResolvedPath} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Button, Table, Tab, Tabs,DropdownButton, Dropdown, InputGroup, Form, FormControl, Col} from 'react-bootstrap';
+import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
 // const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
@@ -15,7 +14,14 @@ export default function GamesList() {
 
     const [response, setResponse] = useState([]);
     const [userInput, setUserInput] = useState([]);
+    const [userInputB, setUserInputB] = useState([]);
     const [filter, setFilter] = useState([]);
+    const [selection, setSelection] = useState([]);
+    const radio_btn = [
+        {name: 'add', value: 'add'},
+        {name: 'update', value: 'update'},
+        {name: 'delete', value: 'delete'}
+    ];
 
     useEffect(() => {
         if(filter && userInput) {
@@ -66,6 +72,10 @@ export default function GamesList() {
             })
         }
 
+    }
+
+    const handleUpdate=(e)=>{
+        console.log(e);
     }
 
     const gamesListTable = () => {
@@ -141,7 +151,7 @@ export default function GamesList() {
                     <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                         <Tab eventKey="gamelist" title="Games Progress">
                             <div className="filter-div" style={{padding: "5px"}}>
-                                Filter (Under Construction):
+                                Filter:
                                 <InputGroup className="game-list-filter">
                                     <Col xs={8}>
                                         <FormControl 
@@ -152,22 +162,60 @@ export default function GamesList() {
                                         />
                                     </Col>
                                     <Col xs={2} md={2}>
-                                    <Form.Select aria-label="Filters" style={{width: "95%"}}
-                                     onChange={(e) => handleSelect(e.target.value)}>
-                                        <option>Filters</option>
-                                        <option value="title">Title</option>
-                                        <option value="system">System</option>
-                                        <option value="release_date">Release Date</option>
-                                        <option value="status">Status</option>
-                                        <option value="yr_completed">Year Completed</option>
-                                    </Form.Select>
+                                        <Form.Select aria-label="Filters" style={{width: "95%"}}
+                                        onChange={(e) => handleSelect(e.target.value)}>
+                                            <option>Filters</option>
+                                            <option value="title">Title</option>
+                                            <option value="system">System</option>
+                                            <option value="release_date">Release Date</option>
+                                            <option value="status">Status</option>
+                                            <option value="yr_completed">Year Completed</option>
+                                        </Form.Select>
                                     </Col>
                                     <Col xs={2} md={2}>
-                                    <Button variant="primary" style={{width: "50%"}}
-                                     onClick={handleSubmit}>Submit</Button>
+                                        <Button variant="primary" style={{width: "50%"}}
+                                        onClick={handleSubmit}>Submit</Button>
                                     </Col>
-
                                 </InputGroup>
+                            </div>
+                            <div className="update-div" style={{paddingLeft: "5px", paddingBottom: "5px"}}>
+                                Update (Under Construction):
+                                <Row>
+                                    <Col xs={8} style={{width: "67%"}}>
+                                        <FormControl 
+                                         aria-label="games-updater" 
+                                         type="text" 
+                                         value={userInputB}
+                                         onChange={(e)=> setUserInputB(e.target.value)}
+                                        />
+                                    </Col>
+                                    <Col xs={2} md={1}>
+                                        <ButtonGroup>
+                                            {radio_btn.map((radio, index) => (
+                                                <ToggleButton
+                                                 key={index}
+                                                 id={'radio-' + index}
+                                                 type="radio"
+                                                 variant="outline-secondary"
+                                                 name="radio"
+                                                 value={radio.value}
+                                                 checked={selection === radio.value}
+                                                 onChange={(e) => setSelection(e.currentTarget.value)}
+                                                >
+                                                     {radio.name}
+                                                </ToggleButton>
+                                            ))}
+                                        </ButtonGroup>
+                                    </Col>
+                                    <Col xs={2} md={2} style={{width: "16%", marginLeft: "100px"}}>
+                                        <Button variant="success" 
+                                         style={{width: "50%"}}
+                                         onClick={handleUpdate}
+                                        >
+                                            Continue
+                                        </Button>
+                                    </Col>
+                                </Row>
                             </div>
                             <div style={{height: "75vh", overflowY: "scroll"}}>
                                 <Table responsive bordered hover>
