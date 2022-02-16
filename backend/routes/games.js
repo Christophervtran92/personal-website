@@ -34,7 +34,7 @@ router.route('/').get((req, res) => {
 
     if(title) {
         query.title = title;
-        let found = Game.find({title: title});
+        let found = Game.find({title: {$regex: ".*" + title + ".*", $options: "i"}});
         found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
         found.then(result => {
             return res.status(200).json(result)
@@ -44,7 +44,7 @@ router.route('/').get((req, res) => {
         })
     } else if(system) {
         query.system = system;
-        let found = Game.find({system: system});
+        let found = Game.find({system: {$regex: ".*" + system + ".*", $options: "i"}});
         found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
         found.then(result => {
             return res.status(200).json(result)
@@ -66,7 +66,7 @@ router.route('/').get((req, res) => {
     }
     else if(status) {
         query.status = status;
-        let found = Game.find({status: status});
+        let found = Game.find({status: {$regex: "^" + status + ".*", $options: "i"}});
         found.sort({yr_completed: 1, status: 1, system: 1, title: 1});
         found.then(result => {
             return res.status(200).json(result)
