@@ -4,11 +4,58 @@ import NavBar from '../navBar/NavBar'
 import axios from "axios";
 import '../home/Home.css'
 import './GamesList.css'
-import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row} from 'react-bootstrap';
+import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row, Modal} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
 // const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
 // const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed", "2021"];
+
+/*
+function UpdateModal(props) {
+    return (
+      <Modal style={{fontFamily: "Quicksand"}}
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Update Menu
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form>
+                <Form.Group className="update-title" controlId="form-update-title">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" placeholder="title" />
+                </Form.Group>
+                <Form.Group className="update-system" controlId="form-update-system">
+                    <Form.Label>System</Form.Label>
+                    <Form.Control type="text" placeholder="system" />
+                </Form.Group>
+                <Form.Group className="update-release-date" controlId="form-update-release-date">
+                    <Form.Label>Release Date</Form.Label>
+                    <Form.Control type="text" placeholder="MM/DD/YYYY" />
+                </Form.Group>
+                <Form.Group className="update-status" controlId="form-update-status">
+                    <Form.Label>Status</Form.Label>
+                    <Form.Control type="text" placeholder="In Progress/Limbo/Planned/Upcoming/Completed" />
+                </Form.Group>
+                <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
+                    <Form.Label>Year Completed</Form.Label>
+                    <Form.Control type="number" placeholder="YYYY" />
+                </Form.Group>
+            </Form>
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="success">Update</Button>
+            <Button variant="secondary" onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+*/
 
 export default function GamesList() {
 
@@ -22,6 +69,9 @@ export default function GamesList() {
         {name: 'update', value: 'update'},
         {name: 'delete', value: 'delete'}
     ];
+
+    const [modalShow, setModalShow] = React.useState(false);
+
 
     useEffect(() => {
         if(filter && userInput) {
@@ -76,6 +126,8 @@ export default function GamesList() {
 
     const handleUpdate=(e)=>{
         console.log(e);
+        if(selection==="update")
+            setModalShow(true);
     }
 
     const gamesListTable = () => {
@@ -141,6 +193,51 @@ export default function GamesList() {
             }
         })
     }
+
+    function UpdateModal(props) {
+        return (
+          <Modal style={{fontFamily: "Quicksand"}}
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                Update Menu
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                    <Form.Group className="update-title" controlId="form-update-title">
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control type="text" placeholder="title" />
+                    </Form.Group>
+                    <Form.Group className="update-system" controlId="form-update-system">
+                        <Form.Label>System</Form.Label>
+                        <Form.Control type="text" placeholder="system" />
+                    </Form.Group>
+                    <Form.Group className="update-release-date" controlId="form-update-release-date">
+                        <Form.Label>Release Date</Form.Label>
+                        <Form.Control type="text" placeholder="MM/DD/YYYY" />
+                    </Form.Group>
+                    <Form.Group className="update-status" controlId="form-update-status">
+                        <Form.Label>Status</Form.Label>
+                        <Form.Control type="text" placeholder="In Progress/Limbo/Planned/Upcoming/Completed" />
+                    </Form.Group>
+                    <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
+                        <Form.Label>Year Completed</Form.Label>
+                        <Form.Control type="number" placeholder="YYYY" />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="success">Update</Button>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
 
     return (
         <div className="games-list">
@@ -214,6 +311,10 @@ export default function GamesList() {
                                         >
                                             Continue
                                         </Button>
+                                        <UpdateModal
+                                            show={modalShow}
+                                            onHide={() => setModalShow(false)}
+                                        />
                                     </Col>
                                 </Row>
                             </div>

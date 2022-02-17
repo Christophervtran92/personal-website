@@ -24,11 +24,14 @@ export default function Home() {
                             </Col>
                             <Col>
                                 <p1 className="Default-paragraph" textAlign="left">
-                                    &emsp; My name is Christopher Tran and this is my website! To learn more about me
-                                    and what this website is about, check out the about page. To see what I have worked 
-                                    on check out my works page. These pages can be navigated to from the links above.
-                                    <p2 style={{fontWeight: "bold", fontSize: "30px"}}><br/><br/>Thanks for checking out my website!</p2>
+                                    &emsp; My name is Christopher Tran and I am a computer science graduate from San José State University. I have lived and studied in the bay area my entire life. 
+                                    Ever since I was a kid I have been interested in electronics whether it be computers or video games, cell phones or televisions, just learning about new technologies 
+                                    always piqued my interest. <br/>
+                                    &emsp; To learn more about me and what this website is about, check out the about page. To see what I have worked on check out my works page. If you are looking for my
+                                    Github and LinkedIn check out Links.
+                                    These pages can be navigated to from the navigation bar above.
                                 </p1>
+                                    <p2 style={{fontWeight: "bold", fontSize: "30px"}}><br/><br/>Thanks for checking out my website!</p2>
                             </Col>
                         </Row>
                     </Container>

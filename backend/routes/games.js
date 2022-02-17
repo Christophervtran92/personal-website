@@ -14,19 +14,6 @@ router.route('/').post((req, res) => {
     })
 })
 
-/*
-//Get all
-router.route('/').get((req, res) => {
-    Game.find().sort({yr_completed: 1, status: 1, system: 1, title: 1})
-    .then(games => {
-        res.json(games)
-    })
-    .catch(err => {
-        res.status(400).json(err)
-    })
-})
-*/
-
 //Get w/ query
 router.route('/').get((req, res) => {
     const{title, system, release_date, status, yr_completed} = req.query;
@@ -115,6 +102,22 @@ router.route('/:id').put((req, res) => {
         game.yr_completed = req.body.yr_completed;
         game.save()
         .then(() => res.status(200).json({message: 'Updated'}))
+        .catch(err => res.status(400).json({error: "Bad Request"}))
+    })
+    .catch(err => res.status(400).json({error: "Bad Request"}))
+})
+
+//Delete
+router.route('/:id').delete((req, res) => {
+    Game.findById(req.params.id)
+    .then(game=> {
+        if(!game) {
+            return res.status(400).json({error: "Not Found"});
+        }
+        Game.deleteOne({_id: req.params.id})
+        .then(result=> {
+            res.status(200).json({message: game.title + " deleted"});
+        })
         .catch(err => res.status(400).json({error: "Bad Request"}))
     })
     .catch(err => res.status(400).json({error: "Bad Request"}))

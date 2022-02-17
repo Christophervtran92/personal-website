@@ -1,11 +1,10 @@
 import React from 'react';
-//import {useNavigate} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import '../home/Home.css'
 import './About.css'
+import {Accordion, ListGroup} from 'react-bootstrap'
 
 export default function About() {
-//    const navigate = useNavigate();
 
     return (
         <div className="about-pic">
@@ -15,9 +14,7 @@ export default function About() {
                     <div className="Default-div" style={{height: "90vh", overflowY: "auto"}}>
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> About Me</h1>
                         <p1 className="Default-paragraph">
-                            My name is Christopher Tran and I am a computer science graduate from San José State University. I have lived and studied in the bay area my entire life. Ever since 
-                            I was a kid I have been interested in electronics whether it be computers or video games, cell phones or televisions, just learning about new technologies 
-                            always piqued my interest. During my junior year of high school I took a java programming class and that was my first experience with computer programming. That was
+                            During my junior year of high school I took a java programming class and that was my first experience with computer programming. That was
                             the class that got me on the path to become a computer scientist. Although my journey was not smooth, there were even times where I felt I was not going to be
                             able to finish my program, I persevered through it all and finally reached the end and got my degree.
                         </p1> 
@@ -30,7 +27,32 @@ export default function About() {
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Education</h1>
                         <p1><center>
                             <h5 style={{fontWeight: "bold"}}>San José State University</h5>
-                            Bachelor of Science - Computer Science (August 2019 - December 2021) <br/><br/>
+                            Bachelor of Science - Computer Science (August 2019 - December 2021) <br/>
+                            <Accordion style={{width: "40%"}}>
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header>Classes Taken</Accordion.Header>
+                                    <Accordion.Body>
+                                    <ListGroup variant="flush" style={{textAlign: "left", overflowY: "auto", lineHeight: "1.5"}}>
+                                        <h6 style={{textDecoration: "underline"}}>Core Classes</h6>
+                                        <ListGroup.Item>CS146 -- Data Structures and Algorithms</ListGroup.Item>
+                                        <ListGroup.Item>CS147 -- Computer Architecture</ListGroup.Item>
+                                        <ListGroup.Item>CS149 -- Operating Systems</ListGroup.Item>
+                                        <ListGroup.Item>CS151 -- Object-Oriented Design</ListGroup.Item>
+                                        <ListGroup.Item>CS152 -- Programming Language Paradigms</ListGroup.Item>
+                                        <ListGroup.Item>CS153 -- Concepts of Compiler Design</ListGroup.Item>
+                                        <ListGroup.Item>CS154 -- Formal Language and Computability</ListGroup.Item>
+                                        <ListGroup.Item>CS160 -- Software Engineering</ListGroup.Item>
+                                        <h6 style={{textDecoration: "underline", paddingTop: "10px"}}>Electives</h6>
+                                        <ListGroup.Item>CS134 -- Computer Game Design and Programming</ListGroup.Item>
+                                        <ListGroup.Item>CS157A -- Introduction to Database Management Systems</ListGroup.Item>
+                                        <ListGroup.Item>CS166 -- Information Security</ListGroup.Item>
+                                        <ListGroup.Item>CS174 -- Server-side Web Programming</ListGroup.Item>
+                                        <ListGroup.Item>CS175 -- Mobile Device Development</ListGroup.Item>
+                                    </ListGroup>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <br/>
                             <h5 style={{fontWeight: "bold"}}>De Anza College</h5>
                             Associate in Arts - Liberal Arts - Science, Math and Engineering Emphasis (September 2010 - March 2019)<br/><br/>
                         </center></p1> 
