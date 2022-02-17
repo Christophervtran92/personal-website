@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 //import {useNavigate} from 'react-router-dom';
 import NavBar from '../navBar/NavBar'
 import '../home/Home.css'
@@ -13,7 +12,7 @@ export default function About() {
             <NavBar/>
             <div className="NavBar-div">
                 <p>
-                    <div className="Default-div" style={{height: "90vh", overflowY: "scroll"}}>
+                    <div className="Default-div" style={{height: "90vh", overflowY: "auto"}}>
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> About Me</h1>
                         <p1 className="Default-paragraph">
                             My name is Christopher Tran and I am a computer science graduate from San José State University. I have lived and studied in the bay area my entire life. Ever since 

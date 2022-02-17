@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import NavBar from '../navBar/NavBar'
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row} from 'react-bootstrap'
 import '../home/Home.css'
 import './Works.css'
 import ez_apply_pic from '../../images/ez_apply_image.png'
@@ -20,7 +20,7 @@ export default function Works() {
             <div className="NavBar-div">
                 <div style={{background: "rgba(255, 255, 255, 0.80)", padding: "12px", borderRadius: "5px", fontFamily: "quicksand"}}>
                     <h1 style={{textAlign: "center", fontFamily: 'quicksand', textDecoration: 'underline'}}>Some of my works</h1>
-                    <div style={{height: "80vh", overflowY: "scroll", marginLeft: "100px"}}>
+                    <div style={{height: "80vh", overflowY: "auto", marginLeft: "100px"}}>
                     <Container cards>
                         <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
                             <Card bg='dark' text='light' style={{ width: '18rem'}}>

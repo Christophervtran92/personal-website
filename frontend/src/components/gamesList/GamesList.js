@@ -217,7 +217,7 @@ export default function GamesList() {
                                     </Col>
                                 </Row>
                             </div>
-                            <div style={{height: "75vh", overflowY: "scroll"}}>
+                            <div style={{height: "75vh", overflowY: "auto"}}>
                                 <Table responsive bordered hover>
                                     <thead>
                                         <th>#</th>

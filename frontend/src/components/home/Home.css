@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 html, body {
-    background:rgb(221, 247, 248);
+    background:rgb(205, 230, 208);
     font-family: 'Times New Roman', Times, serif;
     color: black;
     border-color: white;
 }
 
 .Home-div {
-    background-image: url("../../images/undraw_welcoming.svg");
+    background-image: url("../../images/undraw_welcoming2.svg");
     background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 30%;
+    background-position: left bottom;
+    background-size: 25%;
 }
 
 .Default-div {
