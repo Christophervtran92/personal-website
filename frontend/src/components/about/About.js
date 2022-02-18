@@ -32,7 +32,7 @@ export default function About() {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Classes Taken</Accordion.Header>
                                     <Accordion.Body>
-                                    <ListGroup variant="flush" style={{textAlign: "left", overflowY: "auto", lineHeight: "1.5"}}>
+                                    <ListGroup variant="flush" style={{textAlign: "left", overflowY: "auto", lineHeight: "1.5", height: "20vh"}}>
                                         <h6 style={{textDecoration: "underline"}}>Core Classes</h6>
                                         <ListGroup.Item>CS146 -- Data Structures and Algorithms</ListGroup.Item>
                                         <ListGroup.Item>CS147 -- Computer Architecture</ListGroup.Item>
