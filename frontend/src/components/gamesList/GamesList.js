@@ -13,6 +13,7 @@ const headings = ["Title", "System", "Release Date", "Status", "Year Completed"]
 export default function GamesList() {
 
     const [response, setResponse] = useState([]);
+    const [responseB, setResponseB] = useState([{title: "Title", system: "System"}]);
     const [userInput, setUserInput] = useState([]);
     const [userInputB, setUserInputB] = useState("");
     const [filter, setFilter] = useState([]);
@@ -79,8 +80,25 @@ export default function GamesList() {
 
     const handleUpdate=(e)=>{
         console.log(e);
-        if(selection === "update" && userInputB !== "")
-            setModalShow(true);
+        if(selection === "update" && userInputB !== "") {
+            axios.get("http://localhost:4000/games?title="+userInputB)
+            .then(res => {
+                console.log(res.data)
+                if(res.data && Object.keys(res.data).length === 1) {
+                    setResponseB(res.data)
+                    setModalShow(true)
+                }
+                else if(Object.keys(res.data).length < 1) {
+                    alert("Title does not exist")
+                }
+                else {
+                    alert("There are more than one title with this substring, try again.")
+                }
+            })
+            .catch(err => {
+                err.status(400).json(err)
+            })
+        }
     }
 
     const gamesListTable = () => {
@@ -164,23 +182,23 @@ export default function GamesList() {
                 <Form>
                     <Form.Group className="update-title" controlId="form-update-title">
                         <Form.Label>Title</Form.Label>
-                        <Form.Control type="text" placeholder="Title" />
+                        <Form.Control type="text" name="title" placeholder={responseB[0].title}/>
                     </Form.Group>
                     <Form.Group className="update-system" controlId="form-update-system">
                         <Form.Label>System</Form.Label>
-                        <Form.Control type="text" placeholder="system" />
+                        <Form.Control type="text" name="system" placeholder={responseB[0].system}/>
                     </Form.Group>
                     <Form.Group className="update-release-date" controlId="form-update-release-date">
                         <Form.Label>Release Date</Form.Label>
-                        <Form.Control type="text" placeholder="MM/DD/YYYY" />
+                        <Form.Control type="text" name="release_date" placeholder={responseB[0].release_date}/>
                     </Form.Group>
                     <Form.Group className="update-status" controlId="form-update-status">
                         <Form.Label>Status</Form.Label>
-                        <Form.Control type="text" placeholder="In Progress/Limbo/Planned/Upcoming/Completed" />
+                        <Form.Control type="text" name="status" placeholder={responseB[0].status}/>
                     </Form.Group>
                     <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
                         <Form.Label>Year Completed</Form.Label>
-                        <Form.Control type="number" placeholder="YYYY" />
+                        <Form.Control type="number" name="yr_completed" placeholder={responseB[0].yr_completed}/>
                     </Form.Group>
                 </Form>
             </Modal.Body>
@@ -375,4 +393,53 @@ const handleSelect=(e)=>{
             <Dropdown.Item eventKey="yr_completed">Year Completed</Dropdown.Item>
         </DropdownButton>
     </Col>
+*/
+
+/*
+
+function UpdateModal(props) {
+        return (
+          <Modal style={{fontFamily: "Quicksand"}}
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                Update Menu
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                    <Form.Group className="update-title" controlId="form-update-title">
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control type="text" placeholder= {responseB.title} />
+                    </Form.Group>
+                    <Form.Group className="update-system" controlId="form-update-system">
+                        <Form.Label>System</Form.Label>
+                        <Form.Control type="text" placeholder="system" />
+                    </Form.Group>
+                    <Form.Group className="update-release-date" controlId="form-update-release-date">
+                        <Form.Label>Release Date</Form.Label>
+                        <Form.Control type="text" placeholder="MM/DD/YYYY" />
+                    </Form.Group>
+                    <Form.Group className="update-status" controlId="form-update-status">
+                        <Form.Label>Status</Form.Label>
+                        <Form.Control type="text" placeholder="In Progress/Limbo/Planned/Upcoming/Completed" />
+                    </Form.Group>
+                    <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
+                        <Form.Label>Year Completed</Form.Label>
+                        <Form.Control type="number" placeholder="YYYY" />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="success">Update</Button>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
 */
