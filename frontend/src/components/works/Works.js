@@ -5,14 +5,27 @@ import NavBar from '../navBar/NavBar'
 import {Container, Row} from 'react-bootstrap'
 import '../home/Home.css'
 import './Works.css'
+
 import ez_apply_pic from '../../images/ez_apply_image.png'
 import pascal_c_pic from '../../images/pascal_C_thumbnail.png'
 import atc_pic from '../../images/atc_thumbnail.png'
 import mini_fb_pic from '../../images/mini-fb_thumbnail.png'
+import mern_pic from '../../images/mern_logo.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png'
 
+//Modals for descriptions for this website and school works that may not be allowed to be
+//shown as public.
+import PascalCModal from './works_info/PascalCModal'
+import ATCModal from './works_info/ATCModal'
+import MiniFacebookModal from './works_info/MiniFacebookModal'
+import MyWebsiteModal from './works_info/MyWebsiteModal'
+
 export default function Works() {
-//    const navigate = useNavigate();
+
+    const [pascalCModalShow, setPascalCModalShow] = React.useState(false);
+    const [atcModalShow, setATCModalShow] = React.useState(false);
+    const [miniFacebookModalShow, setMiniFacebookModalShow] = React.useState(false);
+    const [myWebsiteModalShow, setMyWebsiteModalShow] = React.useState(false);
 
     return (
         <div className="Works">
@@ -23,7 +36,22 @@ export default function Works() {
                     <div style={{height: "80vh", overflowY: "auto", marginLeft: "100px"}}>
                     <Container cards>
                         <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
-                            <Card bg='dark' text='light' style={{ width: '18rem'}}>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={mern_pic} alt={"mern"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>This Website</Card.Title>
+                                    <Card.Text>
+                                        My personal website to tell a bit about myself, show some of my works, and show some of my hobbies. 
+                                        This website is a way to continue learning the MERN stack following my Software Engineering class.
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/personal-website" target="_blank">Source Code</Button>
+                                    <Button variant="secondary" style={{marginLeft: "4px", fontSize: "13.7px"}} onClick={() => setMyWebsiteModalShow(true)}>More Info</Button>
+                                    <MyWebsiteModal
+                                        show={myWebsiteModalShow}
+                                        onHide={() => setMyWebsiteModalShow(false)}/>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: '5px'}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={ez_apply_pic} alt={"ez_apply"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>EZ Apply</Card.Title>
@@ -43,7 +71,10 @@ export default function Works() {
                                         Language with a Pascal backbone but built to resemble C style languages. This compiler can run code written in the 
                                         Pascal-C language as well as generate machine code in Jasmine from code written in Pascal-C.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/FALL_2020/tree/master/CS153/Pascal-C" target="_blank">Source Code</Button>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setPascalCModalShow(true)}>More Info</Button>
+                                    <PascalCModal 
+                                        show={pascalCModalShow}
+                                        onHide={() => setPascalCModalShow(false)}/>
                                 </Card.Body>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
@@ -54,118 +85,41 @@ export default function Works() {
                                         A project I worked on for my Data Structures and Algorithms class. It is a simulation of air traffic control 
                                         systems through the use of heapsort and max priority queues. 
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/ATC" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={mini_fb_pic} alt={"minifb"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
-                                    <Card.Text>
-                                        A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
-                                        hashing techniques and a binary search tree to perform inserts, deletes, and search features.
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/SPRING_2020/tree/master/CS146/PA3" target="_blank">Source Code</Button>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setATCModalShow(true)}>More Info</Button>
+                                    <ATCModal
+                                        show={atcModalShow}
+                                        onHide={() => setATCModalShow(false)}/>
                                 </Card.Body>
                             </Card>
                         </Row>
-
-
-
-                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
-                            <Card bg='dark' text='light' style={{ width: '18rem'}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
+                        
+                        <Row>
+                        <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                            <Card.Img variant="top" style={{marginTop: "5px"}} img src={mini_fb_pic} alt={"minifb"} />
+                            <Card.Body>
+                                <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
+                                <Card.Text>
+                                    A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
+                                    hashing techniques and a binary search tree to perform inserts, deletes, and search features.
+                                </Card.Text>
+                                <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMiniFacebookModalShow(true)}>More Info</Button>
+                                <MiniFacebookModal
+                                    show={miniFacebookModalShow}
+                                    onHide={() => setMiniFacebookModalShow(false)}/>
+                            </Card.Body>
+                        </Card>
+                        <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"placeholder_pic"} />
                                 <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
+                                    <Card.Title style={{fontWeight: "bold"}}>Best Buy Automator (Buyer Bot - 02/22/22)</Card.Title>
                                     <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                        A bot idea for purchasing out of stock items. It will refresh the listings until it is in stock and then
+                                        goes through the checkout process, stopping right before clicking the checkout button. 
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/Buyer_Bot" target="_blank">Source Code</Button>
                                 </Card.Body>
                             </Card>
                         </Row>
-                        <Row style={{marginTop: "10px", marginBottom: "10px", justifyContent: "left"}}>
-                            <Card bg='dark' text='light' style={{ width: '18rem'}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"place_holder"} />
-                                <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Placeholder</Card.Title>
-                                    <Card.Text>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                    </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="about:blank" target="_blank">Source Code</Button>
-                                </Card.Body>
-                            </Card>
-                        </Row>
-
-
                     </Container>
                     </div>
                 </div>

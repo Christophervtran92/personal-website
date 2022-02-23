@@ -10,12 +10,61 @@ const headings = ["Title", "System", "Release Date", "Status", "Year Completed"]
 // const demoData = ["Elden Ring", "Playstation 5", "02/25/2022", "Upcoming", "-"];
 // const demoData2 = ["Metroid Dread", "Nintendo Switch", "10/08/2021", "Completed", "2021"];
 
+function UpdateModal(props) {
+    return (
+      <Modal style={{fontFamily: "Quicksand"}}
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Update Menu
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form>
+                <Form.Group className="update-title" controlId="form-update-title">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" name="title" placeholder={props.responseB[0].title}/>
+                </Form.Group>
+                <Form.Group className="update-system" controlId="form-update-system">
+                    <Form.Label>System</Form.Label>
+                    <Form.Control type="text" name="system" placeholder={props.responseB[0].system}/>
+                </Form.Group>
+                <Form.Group className="update-release-date" controlId="form-update-release-date">
+                    <Form.Label>Release Date</Form.Label>
+                    <Form.Control type="text" name="release_date" placeholder={props.responseB[0].release_date}/>
+                </Form.Group>
+                <Form.Group className="update-status" controlId="form-update-status">
+                    <Form.Label>Status</Form.Label>
+                    <Form.Control type="text" name="status" placeholder={props.responseB[0].status}/>
+                </Form.Group>
+                <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
+                    <Form.Label>Year Completed</Form.Label>
+                    <Form.Control type="number" name="yr_completed" placeholder={props.responseB[0].yr_completed}/>
+                </Form.Group>
+            </Form>
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="success">Update</Button>
+            <Button variant="secondary" onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
+
+
+
 export default function GamesList() {
 
     const [response, setResponse] = useState([]);
     const [responseB, setResponseB] = useState([{title: "Title", system: "System"}]);
     const [userInput, setUserInput] = useState([]);
     const [userInputB, setUserInputB] = useState("");
+    const [formData, setFormData] = useState({title: "temp", system: "temp"});
     const [filter, setFilter] = useState([]);
     const [selection, setSelection] = useState([]);
     const radio_btn = [
@@ -165,6 +214,7 @@ export default function GamesList() {
         })
     }
 
+    /*
     function UpdateModal(props) {
         return (
           <Modal style={{fontFamily: "Quicksand"}}
@@ -209,6 +259,7 @@ export default function GamesList() {
           </Modal>
         );
       }
+      */
 
     return (
         <div className="games-list">
@@ -283,6 +334,7 @@ export default function GamesList() {
                                             Continue
                                         </Button>
                                         <UpdateModal
+                                            responseB={responseB}
                                             show={modalShow}
                                             onHide={() => setModalShow(false)}
                                         />
@@ -441,5 +493,4 @@ function UpdateModal(props) {
           </Modal>
         );
       }
-
 */
