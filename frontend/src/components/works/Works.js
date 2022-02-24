@@ -11,6 +11,7 @@ import pascal_c_pic from '../../images/pascal_C_thumbnail.png'
 import atc_pic from '../../images/atc_thumbnail.png'
 import mini_fb_pic from '../../images/mini-fb_thumbnail.png'
 import mern_pic from '../../images/mern_logo.png'
+import textManipulator_pic from '../../images/TextManipulator_thumbnail.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png'
 
 //Modals for descriptions for this website and school works that may not be allowed to be
@@ -94,21 +95,21 @@ export default function Works() {
                         </Row>
                         
                         <Row>
-                        <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                            <Card.Img variant="top" style={{marginTop: "5px"}} img src={mini_fb_pic} alt={"minifb"} />
-                            <Card.Body>
-                                <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
-                                <Card.Text>
-                                    A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
-                                    hashing techniques and a binary search tree to perform inserts, deletes, and search features.
-                                </Card.Text>
-                                <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMiniFacebookModalShow(true)}>More Info</Button>
-                                <MiniFacebookModal
-                                    show={miniFacebookModalShow}
-                                    onHide={() => setMiniFacebookModalShow(false)}/>
-                            </Card.Body>
-                        </Card>
-                        <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={mini_fb_pic} alt={"minifb"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
+                                    <Card.Text>
+                                        A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
+                                        hashing techniques and a binary search tree to perform inserts, deletes, and search features.
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMiniFacebookModalShow(true)}>More Info</Button>
+                                    <MiniFacebookModal
+                                        show={miniFacebookModalShow}
+                                        onHide={() => setMiniFacebookModalShow(false)}/>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"placeholder_pic"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Best Buy Automator (Buyer Bot - 02/22/22)</Card.Title>
@@ -117,6 +118,17 @@ export default function Works() {
                                         goes through the checkout process, stopping right before clicking the checkout button. 
                                     </Card.Text>
                                     <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/Buyer_Bot" target="_blank">Source Code</Button>
+                                </Card.Body>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={textManipulator_pic} alt={"text_manipulator"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Text Manipulator</Card.Title>
+                                    <Card.Text>
+                                        A java program that takes a string and does a variety of uppercase and lowercase manipulations. The program has a GUI that allows users to input
+                                        a string into a box on the left and outputs a manipulated version of the string on a box to the right. 
+                                    </Card.Text>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/WordManipulator" target="_blank">Source Code</Button>
                                 </Card.Body>
                             </Card>
                         </Row>

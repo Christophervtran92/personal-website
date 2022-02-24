@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './components/home/Home';
 import About from './components/about/About';
-import Works from './components/works/Works'
-import GamesList from './components/gamesList/GamesList'
-import UnderConstruction from './components/underConstruction/UnderConstruction'
+import Works from './components/works/Works';
+import GamesList from './components/gamesList/GamesList';
+import UnderConstruction from './components/underConstruction/UnderConstruction';
 
 function App() {
   return (
