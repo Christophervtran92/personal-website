@@ -6,6 +6,9 @@ html, body {
     font-family: 'Times New Roman', Times, serif;
     color: black;
     border-color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
 
 .Home-div {

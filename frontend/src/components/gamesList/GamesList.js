@@ -211,7 +211,7 @@ export default function GamesList() {
         <div className="games-list">
             <NavBar/>
             <div className="NavBar-div">
-                <div style={{background: "white", opacity: "90%", padding: "12px", borderRadius: "5px", fontFamily: "quicksand"}}>
+                <div style={{ background: "white", opacity: "90%", padding: "12px", borderRadius: "5px", fontFamily: "quicksand"}}>
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> Games List<br/> </h1>
                     <Tabs defaultActiveKey="gamelist" id="gamelist-id" className="gamesTabs">
                         <Tab eventKey="gamelist" title="Games Progress">
@@ -287,7 +287,7 @@ export default function GamesList() {
                                     </Col>
                                 </Row>
                             </div>
-                            <div style={{height: "75vh", overflowY: "auto"}}>
+                            <div style={{width: "99%", height: "60vh", overflowY: "auto"}}>
                                 <Table responsive bordered hover>
                                     <thead>
                                         <th>#</th>
