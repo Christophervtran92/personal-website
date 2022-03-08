@@ -20,6 +20,7 @@ import PascalCModal from './works_info/PascalCModal'
 import ATCModal from './works_info/ATCModal'
 import MiniFacebookModal from './works_info/MiniFacebookModal'
 import MyWebsiteModal from './works_info/MyWebsiteModal'
+import TextManipulatorModal from './works_info/TextManipulatorModal.js'
 
 export default function Works() {
 
@@ -27,6 +28,7 @@ export default function Works() {
     const [atcModalShow, setATCModalShow] = React.useState(false);
     const [miniFacebookModalShow, setMiniFacebookModalShow] = React.useState(false);
     const [myWebsiteModalShow, setMyWebsiteModalShow] = React.useState(false);
+    const [textManipulatorModalShow, setTextManipulatorModalShow] = React.useState(false);
 
     return (
         <div className="Works">
@@ -45,12 +47,14 @@ export default function Works() {
                                         My personal website to tell a bit about myself, show some of my works, and show some of my hobbies. 
                                         This website is a way to continue learning the MERN stack following my Software Engineering class.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/personal-website" target="_blank">Source Code</Button>
-                                    <Button variant="secondary" style={{marginLeft: "4px", fontSize: "13.7px"}} onClick={() => setMyWebsiteModalShow(true)}>More Info</Button>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMyWebsiteModalShow(true)}>More Info</Button>
                                     <MyWebsiteModal
                                         show={myWebsiteModalShow}
                                         onHide={() => setMyWebsiteModalShow(false)}/>
-                                </Card.Body>
+                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/personal-website" target="_blank">Source Code</Button>
+                                </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: '5px'}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={ez_apply_pic} alt={"ez_apply"} />
@@ -60,9 +64,11 @@ export default function Works() {
                                         Web-based application made in my Software Engineering class which allows for job seekers
                                         to quickly apply to jobs with a simple click and for recruiters to easily find talent.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/jamessnguyenn/EZ-Apply" target="_blank">Source Code</Button>
-                                    <Button variant="secondary" style={{marginLeft: "4px", fontSize: "13.7px"}} href="https://ez-apply.vercel.app" target="_blank">Check It Out</Button>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://ez-apply.vercel.app" target="_blank">View App</Button>
+                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/jamessnguyenn/EZ-Apply" target="_blank">Source Code</Button>
+                                </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={pascal_c_pic} alt={"pascal_c"} />
@@ -72,11 +78,13 @@ export default function Works() {
                                         Language with a Pascal backbone but built to resemble C style languages. This compiler can run code written in the 
                                         Pascal-C language as well as generate machine code in Jasmine from code written in Pascal-C.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setPascalCModalShow(true)}>More Info</Button>
-                                    <PascalCModal 
-                                        show={pascalCModalShow}
-                                        onHide={() => setPascalCModalShow(false)}/>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setPascalCModalShow(true)}>More Info</Button>
+                                        <PascalCModal 
+                                            show={pascalCModalShow}
+                                            onHide={() => setPascalCModalShow(false)}/>
+                                </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={atc_pic} alt={"atc"} />
@@ -86,11 +94,13 @@ export default function Works() {
                                         A project I worked on for my Data Structures and Algorithms class. It is a simulation of air traffic control 
                                         systems through the use of heapsort and max priority queues. 
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setATCModalShow(true)}>More Info</Button>
-                                    <ATCModal
-                                        show={atcModalShow}
-                                        onHide={() => setATCModalShow(false)}/>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setATCModalShow(true)}>More Info</Button>
+                                        <ATCModal
+                                            show={atcModalShow}
+                                            onHide={() => setATCModalShow(false)}/>
+                                </Card.Footer>
                             </Card>
                         </Row>
                         
@@ -103,11 +113,13 @@ export default function Works() {
                                         A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
                                         hashing techniques and a binary search tree to perform inserts, deletes, and search features.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMiniFacebookModalShow(true)}>More Info</Button>
-                                    <MiniFacebookModal
-                                        show={miniFacebookModalShow}
-                                        onHide={() => setMiniFacebookModalShow(false)}/>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setMiniFacebookModalShow(true)}>More Info</Button>
+                                        <MiniFacebookModal
+                                            show={miniFacebookModalShow}
+                                            onHide={() => setMiniFacebookModalShow(false)}/>
+                                </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"placeholder_pic"} />
@@ -117,19 +129,26 @@ export default function Works() {
                                         A bot idea for purchasing out of stock items. It will refresh the listings until it is in stock and then
                                         goes through the checkout process, stopping right before clicking the checkout button. 
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/Buyer_Bot" target="_blank">Source Code</Button>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="secondary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/Buyer_Bot" target="_blank">Source Code</Button>
+                                </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
                                 <Card.Img variant="top" style={{marginTop: "5px"}} img src={textManipulator_pic} alt={"text_manipulator"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Text Manipulator</Card.Title>
                                     <Card.Text>
-                                        A java program that takes a string and does a variety of uppercase and lowercase manipulations. The program has a GUI that allows users to input
-                                        a string into a box on the left and outputs a manipulated version of the string on a box to the right. 
+                                        A java program that takes a string and does a variety of uppercase and lowercase manipulations. The program utilizes a GUI instead of being command line based.
                                     </Card.Text>
-                                    <Button variant="primary" style={{marginLeft: "2px"}} href="https://github.com/Christophervtran92/WordManipulator" target="_blank">Source Code</Button>
                                 </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setTextManipulatorModalShow(true)}>More Info</Button>
+                                        <TextManipulatorModal
+                                            show={textManipulatorModalShow}
+                                            onHide={() => setTextManipulatorModalShow(false)}/>
+                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/WordManipulator" target="_blank">Source Code</Button>
+                                </Card.Footer>
                             </Card>
                         </Row>
                     </Container>
