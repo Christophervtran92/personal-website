@@ -111,7 +111,7 @@ export default function Works() {
                                     <Card.Title style={{fontWeight: "bold"}}>Mini-Facebook</Card.Title>
                                     <Card.Text>
                                         A project I worked on for my Data Structures and Algorithms class. It is a pseudo Facebook application using 
-                                        hashing techniques and a binary search tree to perform inserts, deletes, and search features.
+                                        hashing techniques and binary search trees to perform inserts, deletes, and search features.
                                     </Card.Text>
                                 </Card.Body>
                                 <Card.Footer>

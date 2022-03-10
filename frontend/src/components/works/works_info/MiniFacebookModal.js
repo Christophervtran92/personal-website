@@ -2,6 +2,7 @@ import React from 'react';
 import {Modal, Button, Accordion, Image} from 'react-bootstrap';
 import './works_info.css';
 
+//Program screenshots
 import MiniFB_populate01_pic from '../../../images/MiniFB/MiniFB_populate01.PNG';
 import MiniFB_populate02_pic from '../../../images/MiniFB/MiniFB_populate02.PNG';
 import MiniFB_populate03_pic from '../../../images/MiniFB/MiniFB_populate03.PNG';
@@ -12,6 +13,26 @@ import MiniFB_SearchUser_pic from '../../../images/MiniFB/MiniFB_SearchUser.PNG'
 import MiniFB_AddUser_pic from '../../../images/MiniFB/MiniFB_AddUser.PNG';
 import MiniFB_DeleteUser_pic from '../../../images/MiniFB/MiniFB_DeleteUser.PNG';
 import MiniFB_CheckFriends_pic from '../../../images/MiniFB/MiniFB_CheckFriends.PNG';
+
+//Code screenshots
+import MiniFB_AddFriendCode_pic from '../../../images/MiniFB/Code/MiniFB_AddFriendCode.PNG';
+import MiniFB_BST01_pic from '../../../images/MiniFB/Code/MiniFB_BST01Code.PNG';
+import MiniFB_BST02_pic from '../../../images/MiniFB/Code/MiniFB_BST02Code.PNG';
+import MiniFB_Choices01_pic from '../../../images/MiniFB/Code/MiniFB_Choices01.PNG';
+import MiniFB_Choices02_pic from '../../../images/MiniFB/Code/MiniFB_Choices02.PNG';
+import MiniFB_Choices03_pic from '../../../images/MiniFB/Code/MiniFB_Choices03.PNG';
+import MiniFB_HashInsertDeleteCode_pic from '../../../images/MiniFB/Code/MiniFB_HashInsertDeleteCode.PNG';
+import MiniFB_HashSearchCode_pic from '../../../images/MiniFB/Code/MiniFB_HashSearchCode.PNG';
+import MiniFB_IsFriendCode_pic from '../../../images/MiniFB/Code/MiniFB_IsFriendCode.PNG';
+import MiniFB_LL01Code_pic from '../../../images/MiniFB/Code/MiniFB_LL01Code.PNG';
+import MiniFB_LL02Code_pic from '../../../images/MiniFB/Code/MiniFB_LL02Code.PNG';
+import MiniFB_NodeCode_pic from '../../../images/MiniFB/Code/MiniFB_NodeCode.PNG';
+import MiniFB_populateCode_pic from '../../../images/MiniFB/Code/MiniFB_populateCode.PNG';
+import MiniFB_PrintUsersCode_pic from '../../../images/MiniFB/Code/MiniFB_PrintUsersCode.PNG';
+import MiniFB_RandomizeFriendsCode_pic from '../../../images/MiniFB/Code/MiniFB_RandomizeFriendsCode.PNG';
+import MiniFB_RemovePrintFriendCode_pic from '../../../images/MiniFB/Code/MiniFB_RemovePrintFriendCode.PNG';
+import MiniFB_SetupCode_pic from '../../../images/MiniFB/Code/MiniFB_SetupCode.PNG';
+import MiniFB_UserGetAddDeleteSearchCode_pic from '../../../images/MiniFB/Code/MiniFB_UserGetAddDeleteSearchCode.PNG';
 
 export default function NavBar (props) {
 
@@ -136,6 +157,71 @@ export default function NavBar (props) {
               </Accordion.Item>
             </Accordion><br/>
             <h4>Code Snippets</h4>
+            <h5>General Functionality</h5>
+            <p1>General parts of the application such as the linked list, binary search tree, and program setup. <br/></p1>
+            <Accordion style={{width: "100%"}}>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>General Code Examples</Accordion.Header>
+                <Accordion.Body>
+                  <h6>Setup and menu<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_SetupCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_Choices01_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_Choices02_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_Choices03_pic}></Image><br/>
+                  </div>
+                  <h6><br/>Node and Linked List<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_NodeCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_LL01Code_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_LL02Code_pic}></Image><br/>
+                  </div>
+                  <h6><br/>Binary Search Tree<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_BST01_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_BST02_pic}></Image><br/>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion><br/>
+            <h5>Hash Table Functionality</h5>
+            <p1>Parts of the application related to building the hash table of MiniFB users and working with the data within.<br/></p1>
+            <Accordion style={{width: "100%"}}>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Hash Table Code Examples</Accordion.Header>
+                <Accordion.Body>
+                  <h6>Building Hash Table and Initializing Users Friends List<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_populateCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_RandomizeFriendsCode_pic}></Image><br/>
+                  </div>
+                  <h6><br/>Hash Table Data Manipulation Methods (and Print)<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_HashInsertDeleteCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_HashSearchCode_pic}></Image><br/>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion><br/>
+            <h5>Application User Functionality</h5>
+            <p1>Parts of the application that the user interacts with.<br/></p1>
+            <Accordion style={{width: "100%"}}>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>User Commands Examples</Accordion.Header>
+                <Accordion.Body>
+                  <h6>MiniFB User Related Commands<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_AddFriendCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_RemovePrintFriendCode_pic}></Image><br/>
+                  </div>
+                  <h6><br/>MiniFB Application Related Commands<br/></h6>
+                  <div style={{background: "rgb(30,30,30)"}}>
+                    <Image fluid='true' img src={MiniFB_IsFriendCode_pic}></Image><br/>
+                    <Image fluid='true' img src={MiniFB_UserGetAddDeleteSearchCode_pic}></Image><br/>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion><br/>
         </Modal.Body>
         <Modal.Footer>
             <Button variant="secondary" onClick={props.onHide}>Close</Button>
