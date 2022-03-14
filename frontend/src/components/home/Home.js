@@ -31,7 +31,6 @@ export default function Home() {
                                     Github and LinkedIn check out Links.
                                     These pages can be navigated to from the navigation bar above.
                                 </p1>
-                                    <p2 style={{fontWeight: "bold", fontSize: "30px"}}><br/><br/>Thanks for checking out my website!</p2>
                             </Col>
                         </Row>
                     </Container>

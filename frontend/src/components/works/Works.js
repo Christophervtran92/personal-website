@@ -1,26 +1,27 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import NavBar from '../navBar/NavBar'
-import {Container, Row} from 'react-bootstrap'
-import '../home/Home.css'
-import './Works.css'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import NavBar from '../navBar/NavBar';
+import {Container, Row} from 'react-bootstrap';
+import '../home/Home.css';
+import './Works.css';
 
-import ez_apply_pic from '../../images/ez_apply_image.png'
-import pascal_c_pic from '../../images/pascal_C_thumbnail.png'
-import atc_pic from '../../images/atc_thumbnail.png'
-import mini_fb_pic from '../../images/mini-fb_thumbnail.png'
-import mern_pic from '../../images/mern_logo.png'
-import textManipulator_pic from '../../images/TextManipulator_thumbnail.png'
-import placeholder_pic from '../../images/placeholder_thumbnail.png'
+import ez_apply_pic from '../../images/ez_apply_image.png';
+import pascal_c_pic from '../../images/pascal_C_thumbnail.png';
+import atc_pic from '../../images/atc_thumbnail.png';
+import mini_fb_pic from '../../images/mini-fb_thumbnail.png';
+import mern_pic from '../../images/mern_logo.png';
+import textManipulator_pic from '../../images/TextManipulator_thumbnail.png';
+import buyer_bot_pic from '../../images/buyer_bot_thumbnail.png';
+import placeholder_pic from '../../images/placeholder_thumbnail.png';
 
 //Modals for descriptions for this website and school works that may not be allowed to be
 //shown as public.
-import PascalCModal from './works_info/PascalCModal'
-import ATCModal from './works_info/ATCModal'
-import MiniFacebookModal from './works_info/MiniFacebookModal'
-import MyWebsiteModal from './works_info/MyWebsiteModal'
-import TextManipulatorModal from './works_info/TextManipulatorModal.js'
+import PascalCModal from './works_info/PascalCModal';
+import ATCModal from './works_info/ATCModal';
+import MiniFacebookModal from './works_info/MiniFacebookModal';
+import MyWebsiteModal from './works_info/MyWebsiteModal';
+import TextManipulatorModal from './works_info/TextManipulatorModal.js';
 
 export default function Works() {
 
@@ -122,7 +123,7 @@ export default function Works() {
                                 </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={placeholder_pic} alt={"placeholder_pic"} />
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={buyer_bot_pic} alt={"buyer_bot"} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: "bold"}}>Best Buy Automator (Buyer Bot - 02/22/22)</Card.Title>
                                     <Card.Text>

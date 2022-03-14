@@ -28,7 +28,7 @@ export default function NavBar (props) {
           <h4 style={{textDecoration: "underline"}}>Description</h4>
           <p1>
             &emsp;Built on the MERN stack and deployed on Vercel. Since my focus on my Software Engineering
-            project was the backend I thought building a website would be a good way to learn the frontend
+            project was the backend I thought building a website would be a good way to learn more of the frontend
             as well. By working on this website several days a week I hope to learn and improve my skills
             on both the frontend and backend. I am still a long way from being a MERN expert, but everyone 
             has to start somewhere! <br/>

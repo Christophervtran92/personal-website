@@ -15,15 +15,34 @@ export default function About() {
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}> About Me</h1>
                         <p1 className="Default-paragraph">
                             During my junior year of high school I took a java programming class and that was my first experience with computer programming. That was
-                            the class that got me on the path to become a computer scientist. Although my journey was not smooth, there were even times where I felt I was not going to be
-                            able to finish my program, I persevered through it all and finally reached the end and got my degree.
-                        </p1> 
-                        <p1 className="Default-paragraph">
-                            During my time at De Anza community college I worked at Central Computers in Sunnyvale, CA. There, I was able to put my interest in computers to work by building
-                            workstations, gaming computers, and servers. While working there I was able to build my interpersonal skills by interacting with customers and co-workers to help
-                            solve technical problems. I started out as a sales associate helping customers choose products for their needs and picking components for their custom built computers.
-                            Later on I became a computer technician helping with building computers and servers as well as troubleshooting software issues for customers. 
+                            the class that got me on the path to become a computer scientist. After graduating high school I decided to attend De Anza College with plans
+                            to transfer to a 4-year university within two years. While at De Anza I first learned to program in C and later C++ when the classes moved on
+                            from C. Other classes I took gave me experience with x86 Assembly Language, HTML, CSS, as well as Adobe Photoshop, Flash, and Dreamweaver. On
+                            top of these CS classes I also took many different electives to really get a feel for what I wanted to pursue. While I went to college with my
+                            focus on CS I was still open to other ideas.
                         </p1>
+                        <p1 className="Default-paragraph">
+                            After a while I started losing focus on my goals in college and decided to reduce my credits and get a job at Central Computers in Sunnyvale, CA. 
+                            My time at Central Computers allowed me to get some real world experience and refocus myself on my CS goals. While there, I was able to put my interest in computers 
+                            to work by building workstations, gaming computers, and servers. While working there I was able to build my interpersonal skills by interacting with customers and 
+                            co-workers to help solve technical problems. I started out as a sales associate helping customers choose products for their needs and picking components for their 
+                            custom built computers. Later on I became a computer technician helping with building computers and servers as well as troubleshooting software issues for customers. 
+                            When I decided to go back and focus on transferring, the CS curriculum changed over to C++ and that was when I got my first experience with C++. From this point I focused 
+                            on completing the classes needed for transfer, which was more than I anticipated but by 2019 I was finally able to move on from De Anza.
+                        </p1>
+                        <p1 className="Default-paragraph">
+                            My time at SJSU gave me an opportunity to work with many new programming concepts and languages I never had the chance to try before. Languages like Pascal, 
+                            Jasmine, Scheme, Haskell, Prolog, Javascript, and SQL. Concepts such as UML diagrams, game design and programming using OpenFramework through C++, database 
+                            design using SQLite, Android Development through Java and Android Studio, frontend and backend web-development using the MERN stack, designing a language with 
+                            ANTLR, automata theory, and regular expressions. While I had a general idea of most of these concepts prior to my time at SJSU, the classes I took provided me 
+                            a more detailed look into the concepts.
+                        </p1>
+                        <p1 className="Default-paragraph">
+                            Although my journey was not smooth, there were even times where I felt I was not going to be able to finish my program, I persevered through it 
+                            all and finally reached the end and got my degree. For me, getting my degree really feels like a major accomplishment as it is a culmination of
+                            a long chapter of my life that began decades ago. Starting as a kid who, honestly, could not care less about school to finally getting through 
+                            college and receiving a bachelors. I am now ready to move on from that chapter of my life and move on to new horizons and take on new challenges.
+                        </p1> 
                         <h1 style={{textDecoration: "underline", textAlign: "center"}}> Education</h1>
                         <p1><center>
                             <h5 style={{fontWeight: "bold"}}>San José State University</h5>
@@ -76,8 +95,10 @@ export default function About() {
                             This website is a way for me to continue learning the MERN stack following my Software Engineering class. 
                             The goal is for the website to become a sleek modern website that can be used to showcase my hobbies, 
                             work, and other endeavors. My personal works have links to the source code on Github while schoolwork 
-                            have detailed information provided. School work has been privatized on Github due to the request of my
-                            instructors who do not want the code copied by future students. Frontend is deployed through Vercel.
+                            have detailed information provided with snapshots of the programs and code snippets. School work has been 
+                            privatized on Github due to the request of my instructors who do not want the code copied by future students. 
+                            While the website may not look all too impressive at the moment, I hope to learn more ways to improve it and 
+                            make it better.
                         </p2>
                     </div>
                 </p>
