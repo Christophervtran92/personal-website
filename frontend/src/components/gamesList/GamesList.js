@@ -1,59 +1,14 @@
 
 import React, {useEffect, useState} from 'react';
-import NavBar from '../navBar/NavBar'
+import NavBar from '../navBar/NavBar';
+import AddModal from './AddModal';
+import DeleteModal from './DeleteModal';
 import axios from "axios";
-import '../home/Home.css'
-import './GamesList.css'
-import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row, Modal, Toast} from 'react-bootstrap';
+import '../home/Home.css';
+import './GamesList.css';
+import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row, Modal} from 'react-bootstrap';
 
 const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
-
-/*
-function UpdateModal(props) {
-    return (
-      <Modal style={{fontFamily: "Quicksand"}}
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Update Menu
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <Form id="formData">
-                <Form.Group className="update-title" controlId="form-update-title">
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" name="title" placeholder={props.responseB[0].title}/>
-                </Form.Group>
-                <Form.Group className="update-system" controlId="form-update-system">
-                    <Form.Label>System</Form.Label>
-                    <Form.Control type="text" name="system" placeholder={props.responseB[0].system}/>
-                </Form.Group>
-                <Form.Group className="update-release-date" controlId="form-update-release-date">
-                    <Form.Label>Release Date</Form.Label>
-                    <Form.Control type="text" name="release_date" placeholder={props.responseB[0].release_date}/>
-                </Form.Group>
-                <Form.Group className="update-status" controlId="form-update-status">
-                    <Form.Label>Status</Form.Label>
-                    <Form.Control type="text" name="status" placeholder={props.responseB[0].status}/>
-                </Form.Group>
-                <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
-                    <Form.Label>Year Completed</Form.Label>
-                    <Form.Control type="number" name="yr_completed" placeholder={props.responseB[0].yr_completed}/>
-                </Form.Group>
-            </Form>
-        </Modal.Body>
-        <Modal.Footer>
-            <Button variant="success" type="submit" form="formData">Update</Button>
-            <Button variant="secondary" onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-  */
 
 export default function GamesList() {
 
@@ -68,7 +23,9 @@ export default function GamesList() {
         {name: 'update', value: 'update'},
         {name: 'delete', value: 'delete'}
     ];
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [addModalShow, setAddModalShow] = useState(false);
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
     var formData = ["title", "system", "release-date", "status", "yr_completed"];
 
     useEffect(() => {
@@ -129,19 +86,35 @@ export default function GamesList() {
             .then(res => {
                 console.log(res.data)
                 if(res.data && Object.keys(res.data).length === 1) {
-                    setResponseB(res.data)
-                    setModalShow(true)
+                    setResponseB(res.data);
+                    setModalShow(true);
                 }
                 else if(Object.keys(res.data).length < 1) {
-                    alert("Title does not exist")
+                    alert("Title does not exist");
                 }
                 else {
-                    alert("There are more than one title with this substring, try again.")
+                    alert("There are more than one title with this substring, try again.");
                 }
             })
             .catch(err => {
-                console.log("Bad input")
-                err.status(400).json(err)
+                console.log("Bad Request");
+                err.status(400).json(err);
+            })
+        }
+        else if(selection === "add" && userInputB !== "") {
+            setAddModalShow(true);
+        }
+        else if(selection === "delete" && userInputB !== "") {
+            axios.get("http://localhost:4000/games?title="+userInputB)
+            .then(res => {
+                if(res.data && Object.keys(res.data).length === 1) {
+                    setResponseB(res.data);
+                    setDeleteModalShow(true);
+                }
+            })
+            .catch(err => {
+                console.log("Bad Request");
+                err.status(400).json(err);
             })
         }
     }
@@ -353,6 +326,17 @@ export default function GamesList() {
                                             show={modalShow}
                                             onHide={() => setModalShow(false)}
                                         />
+                                        <AddModal
+                                            userinput={userInputB}
+                                            show={addModalShow}
+                                            onHide={() => setAddModalShow(false)}
+                                        />
+                                        <DeleteModal
+                                            responseB={responseB}
+                                            userinput={userInputB}
+                                            show={deleteModalShow}
+                                            onHide={() => setDeleteModalShow(false)}
+                                        />
                                     </Col>
                                 </Row>
                             </div>
@@ -379,133 +363,3 @@ export default function GamesList() {
         </div>
     );
 }
-
-/*
------------------
-Component History
------------------
-
-{response.map((res, index) => 
-    <tr>
-        <td>{index+1}</td>
-        <td>{res.title}</td>
-        <td>{res.system}</td>
-        <td>{res.release_date}</td>
-        <td>{res.status}</td>
-        <td>{res.yr_completed}</td>
-    </tr>
-    )}
-
-*/
-
-/*
-    <DropdownButton id="dropdown-basic-button" title="Filter By">
-        <Dropdown.Item href="#/action-1">Title</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">System</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Release Date</Dropdown.Item>
-        <Dropdown.Item href="#/action-4">Status</Dropdown.Item>
-        <Dropdown.Item href="#/action-5">Year Completed</Dropdown.Item>
-    </DropdownButton>
-*/
-
-/*
-    useEffect(() => {
-        axios.get("http://localhost:4000/games")
-        .then(res => {
-            setResponse(res.data)
-        })
-        .catch(err => {
-            err.status(400).json(err)
-        })
-    }, [])
-*/
-
-/*
-const handleSelect=(e)=>{
-        console.log(e);
-        setFilter(e);
-        if(filter && userInput) {
-            axios.get("http://localhost:4000/games?"+filter+"="+userInput)
-            .then(res => {
-                setResponse(res.data)
-            })
-            .catch(err => {
-                err.status(400).json(err)
-            })
-        }
-        else
-        {
-            axios.get("http://localhost:4000/games")
-            .then(res => {
-                setResponse(res.data)
-            })
-            .catch(err => {
-                err.status(400).json(err)
-            })
-        }
-*/
-
-/*
-    <Col xs={1} md={1}>
-        <DropdownButton
-        variant="outline-secondary"
-        title="Filter by"
-        id="games-filter"
-        align="end"
-        >
-            <Dropdown.Item eventKey="title">Title</Dropdown.Item>
-            <Dropdown.Item eventKey="system">System</Dropdown.Item>
-            <Dropdown.Item eventKey="release_date">Release Date</Dropdown.Item>
-            <Dropdown.Item eventKey="status">Status</Dropdown.Item>
-            <Dropdown.Item eventKey="yr_completed">Year Completed</Dropdown.Item>
-        </DropdownButton>
-    </Col>
-*/
-
-/*
-
-function UpdateModal(props) {
-        return (
-          <Modal style={{fontFamily: "Quicksand"}}
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                Update Menu
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form>
-                    <Form.Group className="update-title" controlId="form-update-title">
-                        <Form.Label>Title</Form.Label>
-                        <Form.Control type="text" placeholder= {responseB.title} />
-                    </Form.Group>
-                    <Form.Group className="update-system" controlId="form-update-system">
-                        <Form.Label>System</Form.Label>
-                        <Form.Control type="text" placeholder="system" />
-                    </Form.Group>
-                    <Form.Group className="update-release-date" controlId="form-update-release-date">
-                        <Form.Label>Release Date</Form.Label>
-                        <Form.Control type="text" placeholder="MM/DD/YYYY" />
-                    </Form.Group>
-                    <Form.Group className="update-status" controlId="form-update-status">
-                        <Form.Label>Status</Form.Label>
-                        <Form.Control type="text" placeholder="In Progress/Limbo/Planned/Upcoming/Completed" />
-                    </Form.Group>
-                    <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
-                        <Form.Label>Year Completed</Form.Label>
-                        <Form.Control type="number" placeholder="YYYY" />
-                    </Form.Group>
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button variant="success">Update</Button>
-                <Button variant="secondary" onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-        );
-      }
-*/
