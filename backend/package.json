@@ -4,7 +4,8 @@
     "description": "Website backend",
     "main": "index.js",
     "scripts": {
-        "test": "node index.js"
+        "test": "node index.js",
+        "start": "nodemon -L ./index.js"
     },
     "author": "Christopher Tran",
     "license": "ISC",
@@ -12,5 +13,8 @@
         "cors": "^2.8.5",
         "express": "^4.17.2",
         "mongoose": "^6.2.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
     }
 }
