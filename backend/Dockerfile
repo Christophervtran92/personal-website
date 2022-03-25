@@ -1,4 +1,4 @@
-#backend
+# Dockerfile for my-website backend
 
 FROM node:17.3.0
 

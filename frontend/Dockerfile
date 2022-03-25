@@ -1,4 +1,5 @@
-# Dockerfile for my-website
+# Dockerfile for my-website frontend
+
 FROM node:17.3.0
 
 WORKDIR /usr/src/app
