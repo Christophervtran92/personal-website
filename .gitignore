@@ -25,4 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 .vercel
 
-backend/database.js
+backend/databaseb.js

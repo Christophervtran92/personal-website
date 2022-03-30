@@ -1,3 +1,3 @@
-MONGO_URI = "mongodb+srv://chris:ERzEE3GdHvcyTr9f@cluster0.awecg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MONGO_URI = "mongodb+srv://christophervtran92:1occagemnMoqSrS3@cluster0.awecg.mongodb.net/demo?retryWrites=true&w=majority";
 
 exports.MONGO_URI = MONGO_URI;
