@@ -203,7 +203,7 @@ export default function GamesList() {
                                         />
                                     </Col>
                                     <Col xs={2} md={2}>
-                                        <Form.Select aria-label="Filters" style={{width: "95%"}}
+                                        <Form.Select aria-label="Filters" style={{width: "95%", fontFamily: "quicksand"}}
                                         onChange={(e) => handleSelect(e.target.value)}>
                                             <option>Filters</option>
                                             <option value="title">Title</option>

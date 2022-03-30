@@ -13,6 +13,7 @@ import mini_fb_pic from '../../images/mini-fb_thumbnail.png';
 import mern_pic from '../../images/mern_logo.png';
 import textManipulator_pic from '../../images/TextManipulator_thumbnail.png';
 import buyer_bot_pic from '../../images/buyer_bot_thumbnail.png';
+import tweepy_image_downloader_pic from '../../images/tweepy_image_downloader_thumbnail.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png';
 
 //Modals for descriptions for this website and school works that may not be allowed to be
@@ -22,6 +23,7 @@ import ATCModal from './works_info/ATCModal';
 import MiniFacebookModal from './works_info/MiniFacebookModal';
 import MyWebsiteModal from './works_info/MyWebsiteModal';
 import TextManipulatorModal from './works_info/TextManipulatorModal.js';
+import TIDModal from './works_info/TIDModal.js';
 
 export default function Works() {
 
@@ -30,6 +32,7 @@ export default function Works() {
     const [miniFacebookModalShow, setMiniFacebookModalShow] = React.useState(false);
     const [myWebsiteModalShow, setMyWebsiteModalShow] = React.useState(false);
     const [textManipulatorModalShow, setTextManipulatorModalShow] = React.useState(false);
+    const [tidModalShow, setTidModalShow] = React.useState(false);
 
     return (
         <div className="Works">
@@ -149,6 +152,22 @@ export default function Works() {
                                             show={textManipulatorModalShow}
                                             onHide={() => setTextManipulatorModalShow(false)}/>
                                     <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/WordManipulator" target="_blank">Source Code</Button>
+                                </Card.Footer>
+                            </Card>
+                            <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={tweepy_image_downloader_pic} alt={"tweepy_image_downloader"} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>Tweepy Image Downloader</Card.Title>
+                                    <Card.Text>
+                                        A Python application to download images from a Twitter timeline using the Tweepy API to fetch data from Twitter.
+                                    </Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <Button variant="primary" style={{marginLeft: "2px"}} onClick={() => setTidModalShow(true)}>More Info</Button>
+                                        <TIDModal
+                                            show={tidModalShow}
+                                            onHide={() => setTidModalShow(false)}/>
+                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/Tweepy_Image_Downloader" target="_blank">Source Code</Button>
                                 </Card.Footer>
                             </Card>
                         </Row>

@@ -9,6 +9,11 @@ import filter_status_pic from '../../../images/MyWebsite/website_filter_status.P
 import filter_yrcompleted_pic from '../../../images/MyWebsite/website_filter_yrcompleted.PNG';
 import update_modal_pic from '../../../images/MyWebsite/website_update_modal.PNG';
 import update_invalid_pic from '../../../images/MyWebsite/website_update_invalid.PNG';
+import add_input_pic from '../../../images/MyWebsite/website_add_input.PNG'
+import add_modal_pic from '../../../images/MyWebsite/website_add_modal.PNG'
+import add_finished_pic from '../../../images/MyWebsite/website_add_finished.PNG'
+import delete_modal_pic from '../../../images/MyWebsite/website_delete_modal.PNG'
+import delete_finished_pic from '../../../images/MyWebsite/website_delete_finished.PNG'
 
 export default function NavBar (props) {
 
@@ -30,11 +35,14 @@ export default function NavBar (props) {
             &emsp;Built on the MERN stack and deployed on Vercel. Since my focus on my Software Engineering
             project was the backend I thought building a website would be a good way to learn more of the frontend
             as well. By working on this website several days a week I hope to learn and improve my skills
-            on both the frontend and backend. I am still a long way from being a MERN expert, but everyone 
-            has to start somewhere! <br/>
+            on both the frontend and backend. I am still a long way from being a MERN expert, but everyone has to 
+            start somewhere! <br/>
             &emsp;Thanks to Basmah Altimimi, Bijayata Gurung, James Nguyen, and Smriti Gurung from my
             Software Engineering class for helping me understand/better understand the 
             components in the MERN stack which allowed me to start building this website.<br/><br/>
+            I have also containerized the application using Docker but I am still
+            learning how Docker works so it may not be the best implementation. Nonetheless, the website can successfully
+            be ran through Docker using the docker-compose file in the root directory of the project.<br/><br/>
             Below are descriptions of the features that do not function on the Vercel deployment of 
             the website.<br/><br/>
           </p1>
@@ -47,7 +55,7 @@ export default function NavBar (props) {
             below is some descriptions on the parts that are working but are unable to be showcased on Vercel since 
             it requires a connection to the backend.<br/><br/>
           </p1>
-          <h5 style={{textDecoration: "underline"}}>Filtering</h5>
+          <h5 style={{textDecoration: "underline"}}>Filtering Functionality</h5>
           <p1>
             &emsp;The current implementation of the games list allows for filtering by title, system, release date, status,
             or year completed. Some filters such as title and system can filter by substrings while others such as
@@ -74,7 +82,26 @@ export default function NavBar (props) {
               </Accordion.Item>
           </Accordion>
           <br/>
-          <h5 style={{textDecoration: "underline"}}>Update (In Progress)</h5>
+          <h5 style={{textDecoration: "underline"}}>Update Functionality</h5>
+          <h6 style={{fontWeight: "bold"}}>Add</h6>
+          <p1>
+            &emsp;The add function allows the user to input a new title to be added to the database of games. Much like the update feature a modal will pop up allowing the user
+            to input detailed information about the game to be added. <br/><br/>
+          </p1>
+          <Accordion style={{width: "100%"}}>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Add Examples</Accordion.Header>
+              <Accordion.Body>
+                <h6 style={{textDecoration: "underline"}}>Add Input</h6>
+                <Image fluid='true' img src={add_input_pic} style={{border: "solid", borderColor: "black", borderWidth: "2px"}}></Image><br/><br/>
+                <h6 style={{textDecoration: "underline"}}>Add Modal</h6>
+                <Image fluid='true' img src={add_modal_pic} style={{border: "solid", borderColor: "black", borderWidth: "2px"}}></Image><br/><br/>
+                <h6 style={{textDecoration: "underline"}}>Add Finished</h6>
+                <Image fluid='true' img src={add_finished_pic} style={{border: "solid", borderColor: "black", borderWidth: "2px"}}></Image><br/><br/>
+                </Accordion.Body>
+              </Accordion.Item>
+          </Accordion>
+          <br/>
           <h6 style={{fontWeight: "bold"}}>Update</h6>
           <p1>
             &emsp;The update function will allow for updating a current entry within the games list. Entries are searched by title and so long as the substring
@@ -94,16 +121,24 @@ export default function NavBar (props) {
               </Accordion.Item>
           </Accordion>
           <br/>
-          <h6 style={{fontWeight: "bold"}}>Add (To be added)</h6>
+          <h6 style={{fontWeight: "bold"}}>Delete</h6>
           <p1>
-            &emsp;A feature to be added in the future. The idea is for it to bring up a modal similar to the update feature that allows for adding a new
-            entry into the games list database. <br/><br/>
+            &emsp;The delete function allows the user to remove an entry from the database. The user is able to search for entries to be removed with either the full title or a substring. If it is
+            a substring that only has one matching title then it will select that particular title, otherwise it will not find any titles. Much like the update and add features, delete will also
+            bring up a modal with information on what is to be deleted but the data can not be edited.<br/><br/>
           </p1>
-          <h6 style={{fontWeight: "bold"}}>Delete (To be added)</h6>
-          <p1>
-            &emsp;A feature to be added in the future. It will have the same filtering rules as update where it will only work with substrings that return
-            a single entry. It will allow for removal of an entry from the database with prompts to avoid accidental removals.<br/><br/>
-          </p1>
+          <Accordion style={{width: "100%"}}>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Delete Examples</Accordion.Header>
+              <Accordion.Body>
+                <h6 style={{textDecoration: "underline"}}>Delete Modal</h6>
+                <Image fluid='true' img src={delete_modal_pic} style={{border: "solid", borderColor: "black", borderWidth: "2px"}}></Image><br/><br/>
+                <h6 style={{textDecoration: "underline"}}>Delete Finished</h6>
+                <Image fluid='true' img src={delete_finished_pic} style={{border: "solid", borderColor: "black", borderWidth: "2px"}}></Image><br/><br/>
+                </Accordion.Body>
+              </Accordion.Item>
+          </Accordion>
+          <br/>
           <h6 style={{fontSize: "14px"}}>Backend source code can be found <a href="https://github.com/Christophervtran92/personal-website/tree/main/backend" target="_blank" rel="noreferrer">here</a> </h6>
         </Modal.Body>
         <Modal.Footer>
