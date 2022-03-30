@@ -220,7 +220,7 @@ export default function GamesList() {
                                 </InputGroup>
                             </div>
                             <div className="update-div" style={{paddingLeft: "5px", paddingBottom: "5px"}}>
-                                Update (Under Construction):
+                                Update:
                                 <Row>
                                     <Col xs={8} style={{width: "67%"}}>
                                         <FormControl 
