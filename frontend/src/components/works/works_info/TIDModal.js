@@ -15,7 +15,7 @@ export default function NavBar (props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Tweepy Image Downloader
+            Image Downloader
           </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{height: "75vh", overflowY: "auto"}}>

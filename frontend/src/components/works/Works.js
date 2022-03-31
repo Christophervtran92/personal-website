@@ -13,7 +13,7 @@ import mini_fb_pic from '../../images/mini-fb_thumbnail.png';
 import mern_pic from '../../images/mern_logo.png';
 import textManipulator_pic from '../../images/TextManipulator_thumbnail.png';
 import buyer_bot_pic from '../../images/buyer_bot_thumbnail.png';
-import tweepy_image_downloader_pic from '../../images/tweepy_image_downloader_thumbnail.png'
+import image_downloader_pic from '../../images/image_downloader_thumbnail.png'
 import placeholder_pic from '../../images/placeholder_thumbnail.png';
 
 //Modals for descriptions for this website and school works that may not be allowed to be
@@ -155,9 +155,9 @@ export default function Works() {
                                 </Card.Footer>
                             </Card>
                             <Card bg='dark' text='light' style={{ width: '18rem', marginLeft: "5px"}}>
-                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={tweepy_image_downloader_pic} alt={"tweepy_image_downloader"} />
+                                <Card.Img variant="top" style={{marginTop: "5px"}} img src={image_downloader_pic} alt={"tweepy_image_downloader"} />
                                 <Card.Body>
-                                    <Card.Title style={{fontWeight: "bold"}}>Tweepy Image Downloader</Card.Title>
+                                    <Card.Title style={{fontWeight: "bold"}}>Image Downloader</Card.Title>
                                     <Card.Text>
                                         A Python application to download images from a Twitter timeline using the Tweepy API to fetch data from Twitter.
                                     </Card.Text>
@@ -167,7 +167,7 @@ export default function Works() {
                                         <TIDModal
                                             show={tidModalShow}
                                             onHide={() => setTidModalShow(false)}/>
-                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/Tweepy_Image_Downloader" target="_blank">Source Code</Button>
+                                    <Button variant="secondary" style={{marginLeft: "4px"}} href="https://github.com/Christophervtran92/Image_Downloader" target="_blank">Source Code</Button>
                                 </Card.Footer>
                             </Card>
                         </Row>
