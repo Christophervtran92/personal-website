@@ -1,6 +1,7 @@
 
 import React, {useEffect, useState} from 'react';
 import NavBar from '../navBar/NavBar';
+import GamesListTable from './GamesListTable';
 import AddModal from './AddModal';
 import UpdateModal from './UpdateModal';
 import DeleteModal from './DeleteModal';
@@ -9,16 +10,15 @@ import '../home/Home.css';
 import './GamesList.css';
 import {Button, Table, Tab, Tabs, ButtonGroup, ToggleButton, InputGroup, Form, FormControl, Col, Row} from 'react-bootstrap';
 
-const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
-
 export default function GamesList() {
 
-    const [response, setResponse] = useState([]);
-    const [responseB, setResponseB] = useState([{title: "Title", system: "System"}]);
-    const [userInput, setUserInput] = useState([]);
-    const [userInputB, setUserInputB] = useState("");
-    const [filter, setFilter] = useState([]);
-    const [selection, setSelection] = useState([]);
+    const headings = ["Title", "System", "Release Date", "Status", "Year Completed"];
+    const [response, setResponse] = useState([]);       //Query result
+    const [responseB, setResponseB] = useState([{title: "Title", system: "System"}]); //Entry to update
+    const [userInput, setUserInput] = useState([]);     //For the filter text box
+    const [userInputB, setUserInputB] = useState("");   //For the update text box
+    const [filter, setFilter] = useState([]);           //Filter type (headings)
+    const [selection, setSelection] = useState([]);     //The type of update to be performed
     const radio_btn = [
         {name: 'add', value: 'add'},
         {name: 'update', value: 'update'},
@@ -51,11 +51,13 @@ export default function GamesList() {
         }
     }, [])
 
+    //Handle the selection on the filter dropdown menu
     const handleSelect=(e)=>{
         setFilter(e);
         console.log(e);
     }
 
+    //Handle querying from the search box
     const handleSubmit=(e)=>{
         console.log(e);
         if(filter && userInput) {
@@ -79,6 +81,7 @@ export default function GamesList() {
         }
     }
 
+    //Handle the database entry update functionality
     const handleUpdate=(e)=>{
         console.log(e);
         if(selection === "update" && userInputB !== "") {
@@ -117,70 +120,6 @@ export default function GamesList() {
                 err.status(400).json(err);
             })
         }
-    }
-      
-    const gamesListTable = () => {
-        return response.map((res, index) => {
-            switch(res.status) {
-                case "Upcoming":
-                    return (
-                        <tr style={{backgroundColor: "#5AB4E0"}}>
-                            <td>{index+1}</td>
-                            <td>{res.title}</td>
-                            <td>{res.system}</td>
-                            <td>{res.release_date}</td>
-                            <td>{res.status}</td>
-                            <td>{res.yr_completed}</td>
-                        </tr>
-                    )
-                case "Planned":
-                    return (
-                        <tr style={{backgroundColor: "#BDBDBD"}}>
-                            <td>{index+1}</td>
-                            <td>{res.title}</td>
-                            <td>{res.system}</td>
-                            <td>{res.release_date}</td>
-                            <td>{res.status}</td>
-                            <td>{res.yr_completed}</td>
-                        </tr>
-                    )
-                case "Limbo":
-                    return (
-                        <tr style={{backgroundColor: "#FFC34D"}}>
-                            <td>{index+1}</td>
-                            <td>{res.title}</td>
-                            <td>{res.system}</td>
-                            <td>{res.release_date}</td>
-                            <td>{res.status}</td>
-                            <td>{res.yr_completed}</td>
-                        </tr>
-                    )
-                case "In Progress":
-                    return (
-                        <tr style={{backgroundColor: "#FAFF69"}}>
-                            <td>{index+1}</td>
-                            <td>{res.title}</td>
-                            <td>{res.system}</td>
-                            <td>{res.release_date}</td>
-                            <td>{res.status}</td>
-                            <td>{res.yr_completed}</td>
-                        </tr>
-                    )
-                case "Completed":
-                    return (
-                        <tr style={{backgroundColor: "#8EDB76"}}>
-                            <td>{index+1}</td>
-                            <td>{res.title}</td>
-                            <td>{res.system}</td>
-                            <td>{res.release_date}</td>
-                            <td>{res.status}</td>
-                            <td>{res.yr_completed}</td>
-                        </tr>
-                    )
-                default:
-                    return null;
-            }
-        })
     }
 
     return (
@@ -284,7 +223,9 @@ export default function GamesList() {
                                         ))}
                                     </thead>
                                     <tbody>
-                                        {gamesListTable()}
+                                        <GamesListTable
+                                            response={response}
+                                        />
                                     </tbody>
                                 </Table>
                             </div>

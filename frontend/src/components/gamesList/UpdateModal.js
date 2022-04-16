@@ -22,6 +22,15 @@ export default function UpdateModal(props) {
         })
     }
 
+    //Load game info data from props into formData
+    const loadData=(e)=>{
+      formData[0] = props.responseB[0].title
+      formData[1] = props.responseB[0].system
+      formData[2] = props.responseB[0].release_date
+      formData[3] = props.responseB[0].status
+      formData[4] = props.responseB[0].yr_completed
+    }
+
     return (
       <Modal style={{fontFamily: "Quicksand"}}
         {...props}
@@ -34,11 +43,7 @@ export default function UpdateModal(props) {
             Update Menu
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body onLoad={formData[0] = props.responseB[0].title,
-                            formData[1] = props.responseB[0].system,
-                            formData[2] = props.responseB[0].release_date,
-                            formData[3] = props.responseB[0].status,
-                            formData[4] = props.responseB[0].yr_completed}>
+        <Modal.Body onLoad={loadData}>
             <Form id="update-form">
                 <Form.Group className="update-title" controlId="form-update-title">
                     <Form.Label>Title</Form.Label>
