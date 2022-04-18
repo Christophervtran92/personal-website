@@ -27,7 +27,7 @@ export default function GamesList() {
     const [modalShow, setModalShow] = useState(false);
     const [addModalShow, setAddModalShow] = useState(false);
     const [deleteModalShow, setDeleteModalShow] = useState(false);
-    var formData = ["title", "system", "release-date", "status", "yr_completed"];
+    var formdata = ["title", "system", "release-date", "status", "yr_completed"];
 
     useEffect(() => {
         if(filter && userInput) {
@@ -195,8 +195,8 @@ export default function GamesList() {
                                             Continue
                                         </Button>
                                         <UpdateModal
-                                            responseB={responseB}
-                                            formData={formData}
+                                            responseb={responseB}
+                                            formdata={formdata}
                                             show={modalShow}
                                             onHide={() => setModalShow(false)}
                                         />
