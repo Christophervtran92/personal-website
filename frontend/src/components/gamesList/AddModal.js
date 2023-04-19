@@ -47,7 +47,13 @@ export default function AddModal(props) {
                     </Form.Group>
                     <Form.Group className="update-status" controlId="form-update-status">
                         <Form.Label>Status</Form.Label>
-                        <Form.Control type="text" name="status" placeholder={"status"} onChange={(e)=>formData.status = e.target.value}/>
+                        <Form.Select type="text" name="status" onChange={(e)=>formData.status = e.target.value}>
+                            <option>Planned</option>
+                            <option>Upcoming</option>
+                            <option>In Progress</option>
+                            <option>Limbo</option>
+                            <option>Completed</option>
+                        </Form.Select>
                     </Form.Group>
                     <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
                         <Form.Label>Year Completed</Form.Label>
@@ -62,3 +68,5 @@ export default function AddModal(props) {
         </Modal>
     );
 }
+
+// Line 50: <Form.Control type="text" name="status" placeholder={"status"} onChange={(e)=>formData.status = e.target.value}/>

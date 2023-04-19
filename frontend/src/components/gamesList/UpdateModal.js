@@ -59,7 +59,14 @@ export default function UpdateModal(props) {
                 </Form.Group>
                 <Form.Group className="update-status" controlId="form-update-status">
                     <Form.Label>Status</Form.Label>
-                    <Form.Control type="text" name="status" defaultValue={props.responseb[0].status} onChange={(e)=>formdata[3] = e.target.value}/>
+                    
+                    <Form.Select type="text" name="status" defaultValue={props.responseb[0].status} onChange={(e)=>formdata[3] = e.target.value}>
+                        <option>Planned</option>
+                        <option>Upcoming</option>
+                        <option>In Progress</option>
+                        <option>Limbo</option>
+                        <option>Completed</option>
+                    </Form.Select>
                 </Form.Group>
                 <Form.Group className="update-yr-completed" controlId="form-update-yr-completed">
                     <Form.Label>Year Completed</Form.Label>
@@ -74,3 +81,4 @@ export default function UpdateModal(props) {
       </Modal>
     );
   }
+  //<Form.Control type="text" name="status" defaultValue={props.responseb[0].status} onChange={(e)=>formdata[3] = e.target.value}/>
