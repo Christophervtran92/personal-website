@@ -60,6 +60,17 @@ export default function GamesListTable(props) {
                         <td>{res.yr_completed}</td>
                     </tr>
                 )
+            case "Interested":
+                return (
+                    <tr style={{backgroundColor: "#BFA5F7"}}>
+                        <td>{index+1}</td>
+                        <td>{res.title}</td>
+                        <td>{res.system}</td>
+                        <td>{res.release_date}</td>
+                        <td>{res.status}</td>
+                        <td>{res.yr_completed}</td>
+                    </tr>
+                )
             default:
                 return null;
         }

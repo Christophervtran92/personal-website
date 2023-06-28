@@ -61,8 +61,9 @@ export default function UpdateModal(props) {
                     <Form.Label>Status</Form.Label>
                     
                     <Form.Select type="text" name="status" defaultValue={props.responseb[0].status} onChange={(e)=>formdata[3] = e.target.value}>
-                        <option>Planned</option>
                         <option>Upcoming</option>
+                        <option>Interested</option>
+                        <option>Planned</option>
                         <option>In Progress</option>
                         <option>Limbo</option>
                         <option>Completed</option>

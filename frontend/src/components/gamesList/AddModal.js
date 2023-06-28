@@ -48,8 +48,9 @@ export default function AddModal(props) {
                     <Form.Group className="update-status" controlId="form-update-status">
                         <Form.Label>Status</Form.Label>
                         <Form.Select type="text" name="status" onChange={(e)=>formData.status = e.target.value}>
-                            <option>Planned</option>
                             <option>Upcoming</option>
+                            <option>Interested</option>
+                            <option>Planned</option>
                             <option>In Progress</option>
                             <option>Limbo</option>
                             <option>Completed</option>
